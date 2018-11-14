@@ -1,17 +1,19 @@
 <template>
-  <div class="hello">
-    <div class="test">
-      测试
-    </div>
+  <div>
+    <we-header :WeTitle="msg"></we-header>
   </div>
 </template>
 
 <script>
+import WeHeader from '@/components/Header'
 export default {
   name: 'HelloWorld',
+  components: {
+    WeHeader
+  },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: '免责声明'
     }
   }
 }
@@ -19,9 +21,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-div.test {
-  height: 1rem;
-  background-color: #42b983;
-  font-size: 12px;
-}
 </style>
