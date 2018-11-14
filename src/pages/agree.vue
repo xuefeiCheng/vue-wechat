@@ -1,19 +1,19 @@
 <template>
   <div>
-    <we-header :WeTitle="msg"></we-header>
+    <we-header :WeTitle="title"></we-header>
   </div>
 </template>
 
 <script>
 import WeHeader from '@/components/Header'
 export default {
-  name: 'HelloWorld',
+  name: 'agree',
   components: {
     WeHeader
   },
   data () {
     return {
-      msg: '免责声明'
+      title: '免责声明'
     }
   }
 }
