@@ -22,8 +22,9 @@ export default {
 <style scoped lang="stylus">
   @import '~styles/variables.styl'
   .header
-    position: relative
+    position: fixed
     overflow: hidden
+    width: 100vw
     height: $headerHeight
     line-height: $headerHeight
     color: #fff

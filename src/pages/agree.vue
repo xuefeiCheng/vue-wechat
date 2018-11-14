@@ -114,10 +114,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
+@import '~styles/variables.styl'
 .text-align-l
     text-align left !important
 .box
   padding 0.2rem
+  padding-top 1rem
   line-height 0.4rem
   .Atitle
     text-align center
@@ -143,7 +145,7 @@ export default {
       display inline-block
       height 12px
       width 12px
-      background-color #00bcd4
+      background-color $bgColor
       vertical-align middle
     .item-title
       font-size 12px
@@ -153,7 +155,7 @@ export default {
     height 0.8rem
     line-height 0.8rem
     margin auto
-    background-color #00bcd4
+    background-color $bgColor
     text-align center
     border-radius 0.1rem
     color #fff
