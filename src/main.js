@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import 'lib-flexible/flexible.js'
 
 Vue.config.productionTip = false
 
@@ -13,3 +14,6 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+// 获取dpr iphone6为2
+// flexible 设置data-dpr为1
+// console.log(window.devicePixelRatio)

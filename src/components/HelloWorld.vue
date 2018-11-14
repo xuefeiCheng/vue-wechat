@@ -80,6 +80,7 @@
         </a>
       </li>
     </ul>
+    <div class="test">测试</div>
   </div>
 </template>
 
@@ -109,5 +110,10 @@ li {
 }
 a {
   color: #42b983;
+}
+div.test {
+  height: 1rem;
+  background-color: #42b983;
+  font-size: 12px;
 }
 </style>
