@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Agree from '@/pages/agree'
+import Black from '@/pages/black'
 
 Vue.use(Router)
 
@@ -16,6 +17,11 @@ export default new Router({
       path: '/agree',
       name: 'Agree',
       component: Agree
+    },
+    {
+      path: '/black',
+      name: 'Black',
+      component: Black
     }
   ]
 })
