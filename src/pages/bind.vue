@@ -1,6 +1,6 @@
 <template>
   <div>
-    <we-header :WeTitle="title"></we-header>
+    <we-header :WeTitle="title" :isShow='false'></we-header>
     <div class="box">
       <div class="Atitle">《“绿盾”骚扰电话防护服务条款》</div>
       <p class="font-indent acticle">
