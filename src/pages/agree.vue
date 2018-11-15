@@ -28,7 +28,9 @@
         您同意本条款即代表您授权“绿盾”对你的所有来电进行过滤，对骚扰来电进行拦截和提醒，并同意承担潜在的误拦风险。
         “绿盾”将尽最大努力提供精准的骚扰电话拦截服务，并不断完善产品功能。
       </p>
-      <div class="agreeBtn">确定并绑定手机号</div>
+      <router-link to="/bind">
+        <div class="agreeBtn">确定并绑定手机号</div>
+      </router-link>
     </div>
   </div>
 </template>
