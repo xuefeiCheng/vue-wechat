@@ -141,16 +141,16 @@ export default {
     margin-bottom 0.1rem
   .item
     display inline-block
-    height 45px
-    line-height 45px
+    height 0.6rem
+    line-height 0.6rem
     .square
       display inline-block
-      height 12px
-      width 12px
+      height 0.16rem
+      width 0.16rem
       background-color $bgColor
       vertical-align middle
     .item-title
-      font-size 12px
+      font-size 0.16rem
       font-weight bold
   .agreeBtn
     width 80vw
