@@ -27,6 +27,7 @@ export default {
   @import '~styles/variables.styl'
   .header
     position: fixed
+    z-index: 999
     overflow: hidden
     width: 100vw
     height: $headerHeight
