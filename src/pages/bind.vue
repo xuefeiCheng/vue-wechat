@@ -31,19 +31,42 @@
       </p>
       <div class="agreeBtn">确定并绑定手机号</div>
     </div>
+    <group title="cell demo">
+      <cell title="VUX" value="cool" link="/hello" inline-desc="/hello"></cell>
+      <cell title="VUX" value="showSomething1" is-link @click.native="showPlugin1"></cell>
+      <cell title="VUX" value="showSomething2" is-link @click.native="showPlugin2"></cell>
+    </group>
+    <group>
+      <x-switch :title="showMe" v-model="show" @on-click="handleSwitch"></x-switch>
+    </group>
+    <div v-transfer-dom>
+      <alert v-model="show" :title="Congratulations" @on-show="onShow" @on-hide="onHide"> {{ msg }}</alert>
+    </div>
   </div>
 </template>
 
 <script>
 import WeHeader from '@/components/Header'
+import { Group, Cell, Alert, XSwitch, TransferDomDirective as TransferDom, AlertModule } from 'vux'
 export default {
   name: 'bind',
+  directives: {
+    TransferDom
+  },
   components: {
-    WeHeader
+    WeHeader,
+    Group,
+    Cell,
+    Alert,
+    XSwitch
   },
   data () {
     return {
       title: '号码绑定',
+      msg: 'Hello World!',
+      show: false,
+      showMe: '显示',
+      Congratulations: 'hello',
       BtitleList: [
         {
           'title': '“绿盾”为用户默认开启拦截功能的骚扰电话类别包括：',
@@ -108,6 +131,41 @@ export default {
           ]
         }
       ]
+    }
+  },
+  methods: {
+    onShow () {
+      console.log('show')
+    },
+    onHide () {
+      console.log('hide')
+    },
+    handleSwitch (newValue, oldVlue) {
+      console.log(newValue + '-->' + oldVlue)
+    },
+    showPlugin1 () {
+      this.$vux.alert.show({
+        title: 'VUX is Cool',
+        content: 'hhh',
+        onShow () {
+          console.log('Plugin: I\'m showing')
+        },
+        onHide () {
+          console.log('Plugin: I\'m hiding now')
+        }
+      })
+    },
+    showPlugin2 () {
+      AlertModule.show({
+        title: 'VUX is Cool',
+        content: 'Do you agree?',
+        onShow () {
+          console.log('Module: I\'m showing')
+        },
+        onHide () {
+          console.log('Module: I\'m hiding now')
+        }
+      })
     }
   }
 }

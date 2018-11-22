@@ -6,6 +6,8 @@ import router from './router'
 import fastClick from 'fastclick'
 import 'lib-flexible/flexible.js'
 import 'babel-polyfill'
+import { AlertPlugin } from 'vux'
+Vue.use(AlertPlugin)
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
