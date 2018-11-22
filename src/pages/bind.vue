@@ -1,8 +1,8 @@
 <template>
   <div>
     <we-header :WeTitle="title" :isShow='false'></we-header>
+    <div class="info">开通、取消业务请通过10086或移动营业厅</div>
     <div class="box">
-      <mu-button color="info">Info</mu-button>
       <div class="Atitle">《“绿盾”骚扰电话防护服务条款》</div>
       <p class="font-indent acticle">
         “绿盾”骚扰电话防护服务(下文简称“绿盾”)根据系统智能分析出的骚扰电话信息以及由第三方企业提供的号码标记信息，
@@ -118,9 +118,17 @@ export default {
 @import '~styles/variables.styl'
 .text-align-l
     text-align left !important
+.info
+  position relative
+  top 1rem
+  width 100vw
+  height 1rem
+  line-height 1rem
+  padding-left  0.1rem
+  background-color #97e6f1
+  color $bgColor
 .box
   padding 0.2rem
-  padding-top 1rem
   line-height 0.4rem
   .Atitle
     text-align center
