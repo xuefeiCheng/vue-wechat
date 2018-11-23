@@ -2,52 +2,20 @@
   <div>
     <we-header :WeTitle="title" :isShow='false'></we-header>
     <div class="info">开通、取消业务请通过10086或移动营业厅</div>
-    <div class="box">
-      <div class="Atitle">《“绿盾”骚扰电话防护服务条款》</div>
-      <p class="font-indent acticle">
-        “绿盾”骚扰电话防护服务(下文简称“绿盾”)根据系统智能分析出的骚扰电话信息以及由第三方企业提供的号码标记信息，
-        经用户授权，对由用户认定对其构成骚扰的特定类别的骚扰电话来电进行拦截，
-        并根据用户的设定向用户发出拦截通知。
-      </p>
-      <div v-for="(item, index) of BtitleList" :key="index">
-        <div v-if="item.isShow">
-          <p>用户可通过“绿盾”业务微信公众号等渠道开启或关闭上述各类骚扰来电的拦截功能，并可修改各类骚扰电话的标记阈值（当某电话号码的用户标记数超过该阈值时，该电话号码会被系统认定为该类型骚扰电话）。</p>
-          <p>“绿盾”还提供黑/白名单功能，用户可通过“绿盾”业务微信公众号等渠道设置黑名单和白名单，黑名单号码的来电将在云端被直接拦截，白名单号码的来电将在云端被直接放行。</p>
-        </div>
-        <h4 class="Btitle">{{item.title}}</h4>
-        <div class="item" v-for="(innerItem, index) of item.itemList" :key="index">
-          <span class="square"></span>
-          <span class="item-title">{{innerItem.title}}</span>
-          <span class="item-content">
-            {{innerItem.content}}
-          </span>
-        </div>
-      </div>
-      <div class="Atitle text-align-l">“绿盾”免责条款：</div>
-      <p class="font-indent acticle">
-        “绿盾”在骚扰电话拦截中所使用的电话号码标记数据来自第三方合作企业，由其用户自行标记产生。“绿盾”对上述第三方号码标记数据持中立态度，不对其真实性、准确性、有效性以及由此引发的误拦行为承担法律责任。请您充分了解上述风险，谨慎决定是否开通“绿盾”骚扰电话拦截功能。
-        您同意本条款即代表您授权“绿盾”对你的所有来电进行过滤，对骚扰来电进行拦截和提醒，并同意承担潜在的误拦风险。
-        “绿盾”将尽最大努力提供精准的骚扰电话拦截服务，并不断完善产品功能。
-      </p>
-      <div class="agreeBtn">确定并绑定手机号</div>
-    </div>
-    <group title="cell demo">
-      <cell title="VUX" value="cool" link="/hello" inline-desc="/hello"></cell>
-      <cell title="VUX" value="showSomething1" is-link @click.native="showPlugin1"></cell>
-      <cell title="VUX" value="showSomething2" is-link @click.native="showPlugin2"></cell>
+    <div class="info warnInfo" v-show="bindState">您已绑定17615839470,继续帮顶将会替换已绑定手机号!</div>
+    <group title="号码绑定">
+      <x-input title="手机号码" name="mobile" placeholder="请输入手机号码" keyboard="number" is-type="china-mobile"></x-input>
+      <x-input title="发送验证码" class="weui-vcode">
+        <x-button slot="right" type="primary" mini>发送验证码</x-button>
+      </x-input>
     </group>
-    <group>
-      <x-switch :title="showMe" v-model="show" @on-click="handleSwitch"></x-switch>
-    </group>
-    <div v-transfer-dom>
-      <alert v-model="show" :title="Congratulations" @on-show="onShow" @on-hide="onHide"> {{ msg }}</alert>
-    </div>
+    <x-button type="primary" style="margin-top:1em;width:80vw">确定</x-button>
   </div>
 </template>
 
 <script>
 import WeHeader from '@/components/Header'
-import { Group, Cell, Alert, XSwitch, TransferDomDirective as TransferDom, AlertModule } from 'vux'
+import { Group, Cell, Alert, XSwitch, TransferDomDirective as TransferDom, AlertModule, XInput, XButton, Divider } from 'vux'
 export default {
   name: 'bind',
   directives: {
@@ -58,12 +26,16 @@ export default {
     Group,
     Cell,
     Alert,
-    XSwitch
+    XSwitch,
+    XInput,
+    XButton,
+    Divider
   },
   data () {
     return {
       title: '号码绑定',
       msg: 'Hello World!',
+      bindState: false,
       show: false,
       showMe: '显示',
       Congratulations: 'hello',
@@ -178,13 +150,15 @@ export default {
     text-align left !important
 .info
   position relative
-  top 1rem
   width 100vw
   height 1rem
   line-height 1rem
   padding-left  0.1rem
   background-color #97e6f1
   color $bgColor
+.warnInfo
+  color $defaultColor
+  background-color $warn
 .box
   padding 0.2rem
   line-height 0.4rem
