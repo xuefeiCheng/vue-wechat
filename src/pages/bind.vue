@@ -10,12 +10,17 @@
       </x-input>
     </group>
     <x-button type="primary" style="margin-top:1em;width:80vw">确定</x-button>
+    <tabbar>
+      <div class="agreeBindDiv">
+        <input type="checkbox" v-model="agreeBind" />{{text}}
+      </div>
+    </tabbar>
   </div>
 </template>
 
 <script>
 import WeHeader from '@/components/Header'
-import { Group, Cell, Alert, XSwitch, TransferDomDirective as TransferDom, AlertModule, XInput, XButton, Divider } from 'vux'
+import { Group, Cell, Alert, TransferDomDirective as TransferDom, AlertModule, XInput, XButton, Divider, Tabbar, CheckIcon } from 'vux'
 export default {
   name: 'bind',
   directives: {
@@ -26,10 +31,11 @@ export default {
     Group,
     Cell,
     Alert,
-    XSwitch,
     XInput,
     XButton,
-    Divider
+    Divider,
+    Tabbar,
+    CheckIcon
   },
   data () {
     return {
@@ -38,6 +44,8 @@ export default {
       bindState: false,
       show: false,
       showMe: '显示',
+      agreeBind: true,
+      text: '开通即代表同意<<"绿盾"防护的服务条款>>',
       Congratulations: 'hello',
       BtitleList: [
         {
@@ -159,6 +167,10 @@ export default {
 .warnInfo
   color $defaultColor
   background-color $warn
+.agreeBindDiv
+  height .7rem
+  line-height .7rem
+  padding .2rem .5rem
 .box
   padding 0.2rem
   line-height 0.4rem
