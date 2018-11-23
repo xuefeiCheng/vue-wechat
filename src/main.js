@@ -7,8 +7,8 @@ import fastClick from 'fastclick'
 import axios from '@/util/http'
 import 'lib-flexible/flexible.js'
 import 'babel-polyfill'
-import { AlertPlugin } from 'vux'
-Vue.use(AlertPlugin)
+import { AlertPlugin, Toast } from 'vux'
+Vue.use(AlertPlugin, Toast)
 
 Vue.prototype.axios = axios
 Vue.config.productionTip = false
