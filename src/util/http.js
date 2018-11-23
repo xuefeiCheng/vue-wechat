@@ -22,7 +22,7 @@ axios.interceptors.response.use(
     if (code === 402) { // 拦截未登陆请求到登录界面
       this.$vux.toast.show({
         text: '402啦'
-       })
+      })
       // store.commit('LOGOUT')
     }
     return data

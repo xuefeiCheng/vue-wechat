@@ -1,16 +1,21 @@
 <template>
-  <div class="header">
-    <span>{{WeTitle}}</span>
+  <!-- <div class="header">
+    <span>{{WeTitle}}</span> -->
     <!-- <div class='iconfont back-icon'>&#xe624;</div> -->
-    <router-link to="/" v-if='isShow'>
+    <!-- <router-link to="/" v-if='isShow'>
       <div class='iconfont back-icon'>&#xe624;</div>
     </router-link>
-  </div>
+  </div> -->
+  <x-header :title="WeTitle"></x-header>
 </template>
 
 <script>
+import { XHeader } from 'vux'
 export default {
   name: 'WeHeader',
+  components: {
+    XHeader
+  },
   props: {
     WeTitle: {
       type: String
