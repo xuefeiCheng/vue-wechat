@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Agree from '@/pages/agree'
-import Black from '@/pages/black/black'
 import Bind from '@/pages/bind'
 
 Vue.use(Router)
@@ -25,9 +24,14 @@ export default new Router({
       component: Bind
     },
     {
-      path: '/black',
-      name: 'Black',
-      component: Black
+      path: '/black/list',
+      name: 'ListBlack',
+      component: () => import('@/pages/black/black')
+    },
+    {
+      path: '/black/add',
+      name: 'AddBlack',
+      component: () => import('@/pages/black/add')
     }
   ]
 })
