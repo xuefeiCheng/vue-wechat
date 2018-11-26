@@ -11,21 +11,33 @@
     @on-cancel="onCancel"
     @on-submit="onSubmit"
     ref="search"></search>
-  <group>
-    <cell title="keyword">{{ value }}</cell>
-  </group>
-  <group>
-    <cell
-      title="static position demo"
-      is-link
-      link="/component/search-static"></cell>
-  </group>
+    <group>
+      <cell title="添加黑名单">
+        <x-icon type="ios-plus-outline" class="cell-x-icon" slot="icon"></x-icon>
+      </cell>
+    </group>
+    <group>
+      <cell inline-desc='2018/11/22 15:27:40'>
+        <x-icon type="ios-minus-outline" class="cell-x-icon" @click="onDeleteItem"></x-icon>
+        <span slot="title">
+          <span style="vertical-align:middle;">7615248952</span>
+          <badge text="教育培训"></badge>
+        </span>
+      </cell>
+      <cell inline-desc='2018/11/22 15:27:40'>
+        <x-icon type="ios-minus-outline" class="cell-x-icon"></x-icon>
+        <span slot="title">
+          <span style="vertical-align:middle;">17615864102</span>
+          <badge text="教育培训"></badge>
+        </span>
+      </cell>
+    </group>
   </div>
 </template>
 
 <script>
 import WeHeader from '@/components/Header'
-import { Search, Group, Cell, XButton } from 'vux'
+import { Search, Group, Cell, XButton, Badge } from 'vux'
 
 export default {
   name: 'agree',
@@ -34,7 +46,8 @@ export default {
     Search,
     Group,
     Cell,
-    XButton
+    XButton,
+    Badge
   },
   data () {
     return {
@@ -64,6 +77,9 @@ export default {
     },
     onCancel () {
       console.log('on cancel')
+    },
+    onDeleteItem () {
+      console.log('on delete')
     }
   }
 }
