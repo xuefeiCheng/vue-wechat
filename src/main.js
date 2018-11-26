@@ -8,8 +8,10 @@ import axios from '@/util/http'
 import 'lib-flexible/flexible.js'
 import 'babel-polyfill'
 import '@/assets/styles/global.css'
-import { AlertPlugin, Toast } from 'vux'
-Vue.use(AlertPlugin, Toast)
+import { AlertPlugin, ToastPlugin } from 'vux'
+
+Vue.use(AlertPlugin)
+Vue.use(ToastPlugin)
 
 Vue.prototype.axios = axios
 Vue.config.productionTip = false

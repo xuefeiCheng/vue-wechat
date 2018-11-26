@@ -1,35 +1,25 @@
 <template>
   <div>
     <we-header :WeTitle="title"></we-header>
-    <div class="">
-      <!-- top="46px"
-      position="absolute" -->
-      <search
-      @result-click="resultClick"
-      @on-change="getResult"
-      :results="results"
-      v-model="value"
-      auto-scroll-to-top
-      @on-focus="onFocus"
-      @on-cancel="onCancel"
-      @on-submit="onSubmit"
-      ref="search"></search>
-    <group>
-      <cell title="keyword">{{ value }}</cell>
-    </group>
-
-    <div style="padding:15px;">
-      <x-button
-        @click.native="setFocus"
-        type="primary">set focus</x-button>
-    </div>
-    <group>
-      <cell
-        title="static position demo"
-        is-link
-        link="/component/search-static"></cell>
-    </group>
-    </div>
+    <search
+    @result-click="resultClick"
+    @on-change="getResult"
+    :results="results"
+    v-model="value"
+    auto-scroll-to-top
+    @on-focus="onFocus"
+    @on-cancel="onCancel"
+    @on-submit="onSubmit"
+    ref="search"></search>
+  <group>
+    <cell title="keyword">{{ value }}</cell>
+  </group>
+  <group>
+    <cell
+      title="static position demo"
+      is-link
+      link="/component/search-static"></cell>
+  </group>
   </div>
 </template>
 
@@ -50,13 +40,10 @@ export default {
     return {
       title: '黑名单列表',
       results: [],
-      value: 'test'
+      value: ''
     }
   },
   methods: {
-    setFocus () {
-      this.$refs.search.setFocus()
-    },
     resultClick (item) {
       window.alert('you click the result item: ' + JSON.stringify(item))
     },
