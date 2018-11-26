@@ -13,7 +13,7 @@
     ref="search"></search>
     <router-link to="/black/add">
       <group>
-        <cell title="添加黑名单">
+        <cell title="添加黑aaa名单">
           <x-icon type="ios-plus-outline" class="cell-x-icon" slot="icon"></x-icon>
         </cell>
       </group>
@@ -42,7 +42,7 @@ import WeHeader from '@/components/Header'
 import { Search, Group, Cell, XButton, Badge } from 'vux'
 
 export default {
-  name: 'agree',
+  name: 'addBlack',
   components: {
     WeHeader,
     Search,
@@ -53,7 +53,7 @@ export default {
   },
   data () {
     return {
-      title: '黑名单列表',
+      title: '新增黑名单',
       results: [],
       value: ''
     }
