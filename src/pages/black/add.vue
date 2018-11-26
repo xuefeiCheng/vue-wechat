@@ -1,105 +1,81 @@
 <template>
   <div>
     <we-header :WeTitle="title"></we-header>
-    <search
-    @result-click="resultClick"
-    @on-change="getResult"
-    :results="results"
-    v-model="value"
-    auto-scroll-to-top
-    @on-focus="onFocus"
-    @on-cancel="onCancel"
-    @on-submit="onSubmit"
-    ref="search"></search>
-    <router-link to="/black/add">
-      <group>
-        <cell title="添加黑aaa名单">
-          <x-icon type="ios-plus-outline" class="cell-x-icon" slot="icon"></x-icon>
-        </cell>
-      </group>
-    </router-link>
-    <group>
-      <cell inline-desc='2018/11/22 15:27:40'>
-        <x-icon type="ios-minus-outline" class="cell-x-icon" @click="onDeleteItem"></x-icon>
-        <span slot="title">
-          <span style="vertical-align:middle;">7615248952</span>
-          <badge text="教育培训"></badge>
-        </span>
-      </cell>
-      <cell inline-desc='2018/11/22 15:27:40'>
-        <x-icon type="ios-minus-outline" class="cell-x-icon"></x-icon>
-        <span slot="title">
-          <span style="vertical-align:middle;">17615864102</span>
-          <badge text="教育培训"></badge>
-        </span>
-      </cell>
-    </group>
+    <div class="add-box">
+      <div class="box-top">
+        <div></div>
+      </div>
+      <div class="box-info">手机无需区号，添加后，黑名单中的号码来电会被直接拦截</div>
+      <div class="box-middle">
+        <div class="coloumn">
+          <div class="reson-item">1</div>
+          <div class="reson-item">1</div>
+          <div class="reson-item">1</div>
+          <div class="reson-item">1</div>
+        </div>
+        <div class="coloumn">
+          <div class="reson-item">1</div>
+          <div class="reson-item">1</div>
+          <div class="reson-item">1</div>
+          <div class="reson-item">1</div>
+        </div>
+      </div>
+      <div class="box-bottom">
+        <x-button type="primary" style="margin-top:1em;width:80vw">立即添加</x-button>
+        <x-button type="default" style="margin-top:1em;width:80vw">黑名单列表</x-button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import WeHeader from '@/components/Header'
-import { Search, Group, Cell, XButton, Badge } from 'vux'
-
+import { XButton } from 'vux'
 export default {
   name: 'addBlack',
   components: {
     WeHeader,
-    Search,
-    Group,
-    Cell,
-    XButton,
-    Badge
+    XButton
   },
   data () {
     return {
-      title: '新增黑名单',
-      results: [],
-      value: ''
+      title: '新增黑名单'
     }
   },
-  methods: {
-    resultClick (item) {
-      window.alert('you click the result item: ' + JSON.stringify(item))
-    },
-    getResult (val) {
-      console.log('on-change', val)
-      this.results = val ? getResult(this.value) : []
-    },
-    onSubmit () {
-      this.$refs.search.setBlur()
-      this.$vux.toast.show({
-        type: 'text',
-        position: 'top',
-        text: 'on submit'
-      })
-    },
-    onFocus () {
-      console.log('on focus')
-    },
-    onCancel () {
-      console.log('on cancel')
-    },
-    onDeleteItem () {
-      console.log('on delete')
-    }
-  }
-}
-function getResult (val) {
-  let rs = []
-  for (let i = 0; i < 20; i++) {
-    rs.push({
-      title: `${val} result: ${i + 1} `,
-      other: i
-    })
-  }
-  return rs
+  methods: {}
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
-.vux-search-fixed
-  position relative !important
-  top 0 !important
+@import '~styles/variables.styl'
+.add-box
+  width 100vw
+  height 100vh
+  background #cccccc
+  .box-top
+    height 20%
+    background $bgColor
+  .box-info
+    height 0.5333rem
+    line-height 0.5333rem
+    background #23d4ea
+    padding-left 0.1333rem
+    color #fff
+  .box-middle
+    height 30%
+    background #ffffff
+    display: flex
+    flex-wrap: wrap
+    align-content: center
+    .coloumn
+      flex-basis: 100%
+      display: flex
+      justify-content: center
+      .reson-item
+        width 2.4rem
+        height 2.4rem
+        border 1px solid red
+        background #cccccc
+
 </style>
