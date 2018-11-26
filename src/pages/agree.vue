@@ -121,7 +121,7 @@ export default {
     text-align left !important
 .box
   padding 0.2rem
-  padding-top 1rem
+  // padding-top 1rem
   line-height 0.4rem
   .Atitle
     text-align center

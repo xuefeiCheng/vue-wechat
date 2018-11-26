@@ -42,7 +42,7 @@ export default {
   },
   data () {
     return {
-      title: '免责声明',
+      title: '黑名单列表',
       BtitleList: [
         {
           'title': '“绿盾”为用户默认开启拦截功能的骚扰电话类别包括：',
