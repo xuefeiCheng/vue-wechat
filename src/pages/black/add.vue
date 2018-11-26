@@ -8,9 +8,9 @@
       <div class="box-info">手机无需区号，添加后，黑名单中的号码来电会被直接拦截</div>
       <div class="box-middle">
         <div class="coloumn" v-for="( img, index ) in imgList" :key="index">
-          <div class="reson-item" v-for="i in img" :key="i.value">
-            <img class="reson-item-img" :src="i.src[0]" alt="img.title" v-show='i.state'>
-            <img class="reson-item-img" :src="i.src[1]" alt="img.title" v-show='!i.state'>
+          <div class="reson-item" v-for="i in img" :key="i.value" @click="selectBlackReason(i)">
+            <img class="reson-item-img" :src="i.src[0]" alt="img.title" v-show='!i.state'>
+            <img class="reson-item-img" :src="i.src[1]" alt="img.title" v-show='i.state'>
             <div class="reson-item-img reson-item-title">{{i.title}}</div>
           </div>
         </div>
@@ -35,59 +35,74 @@ export default {
   data () {
     return {
       title: '新增黑名单',
-      imgList:[[
-        {
+      imgList: [
+        [{
           value: '1',
           state: false,
-          src: ['/static/img/black/addblack_swindle.png', '/static/img/black/addblack_swindle.png'],
+          src: ['/static/img/black/addblack_swindle.png', '/static/img/black/addblack_swindle_press.png'],
           title: '诈骗电话'
         },
         {
           value: '2',
           state: false,
-          src: ['/static/img/black/addblack_harass.png', '/static/img/black/addblack_harass.png'],
+          src: ['/static/img/black/addblack_harass.png', '/static/img/black/addblack_harass_press.png'],
           title: '恶意骚扰'
         },
         {
           value: '3',
           state: false,
-          src: ['/static/img/black/addblack_medi.png', '/static/img/black/addblack_medi.png'],
+          src: ['/static/img/black/addblack_medi.png', '/static/img/black/addblack_medi_press.png'],
           title: '房产中介'
         },
         {
           value: '4',
           state: false,
-          src: ['/static/img/black/addblack_ad.png', '/static/img/black/addblack_ad.png'],
+          src: ['/static/img/black/addblack_ad.png', '/static/img/black/addblack_ad_press.png'],
           title: '广告推销'
         }],
         [{
           value: '5',
           state: false,
-          src: ['/static/img/black/addblack_promote.png', '/static/img/black/addblack_promote.png'],
+          src: ['/static/img/black/addblack_promote.png', '/static/img/black/addblack_promote_press.png'],
           title: '保险理财'
         },
         {
           value: '6',
           state: false,
-          src: ['/static/img/black/addblack_edu.png', '/static/img/black/addblack_edu.png'],
+          src: ['/static/img/black/addblack_edu.png', '/static/img/black/addblack_edu_press.png'],
           title: '教育培训'
         },
         {
           value: '7',
           state: false,
-          src: ['/static/img/black/addblack_express.png', '/static/img/black/addblack_express.png'],
+          src: ['/static/img/black/addblack_express.png', '/static/img/black/addblack_express_press.png'],
           title: '快递送餐'
         },
         {
           value: '8',
           state: false,
-          src: ['/static/img/black/addblack_other.png', '/static/img/black/addblack_other.png'],
+          src: ['/static/img/black/addblack_other.png', '/static/img/black/addblack_other_press.png'],
           title: '其他'
         }]
       ]
     }
   },
-  methods: {}
+  methods: {
+    initBlackList () {
+      this.imgList.forEach(element => {
+        element.forEach(e => {
+          e.state = false
+        })
+      })
+    },
+    selectBlackReason (i) {
+      this.initBlackList()
+      this.$nextTick(() => {
+        i.state = true
+        // console.log(i)
+      })
+    }
+  }
 }
 </script>
 
