@@ -117,16 +117,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
 @import '~styles/variables.styl'
-.text-align-l
-    text-align left !important
 .Atitle
   text-align center
   font-size 0.32rem
   height 0.8rem
   line-height 0.8rem
   font-weight bold
-.font-indent
-  text-indent 2em
 .acticle
   padding 0.1333rem 0
 .Btitle

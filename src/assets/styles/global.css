@@ -3,3 +3,9 @@
   /* padding-top: 1rem; */
   line-height: 0.4rem;
 }
+.text-align-l{
+  text-align: left !important;
+}
+.font-indent{
+  text-indent:2em;
+}
