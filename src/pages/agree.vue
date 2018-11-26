@@ -119,46 +119,42 @@ export default {
 @import '~styles/variables.styl'
 .text-align-l
     text-align left !important
-.box
-  padding 0.2rem
-  // padding-top 1rem
-  line-height 0.4rem
-  .Atitle
-    text-align center
-    font-size 0.32rem
-    height 0.8rem
-    line-height 0.8rem
-    font-weight bold
-  .font-indent
-    text-indent 2em
-  .acticle
-    padding 0.1333rem 0
-  .Btitle
-    font-size 0.16rem
-    // height 0.6rem
-    line-height 0.6rem
-    font-weight bold
-    margin-bottom 0.1rem
-  .item
+.Atitle
+  text-align center
+  font-size 0.32rem
+  height 0.8rem
+  line-height 0.8rem
+  font-weight bold
+.font-indent
+  text-indent 2em
+.acticle
+  padding 0.1333rem 0
+.Btitle
+  font-size 0.16rem
+  // height 0.6rem
+  line-height 0.6rem
+  font-weight bold
+  margin-bottom 0.1rem
+.item
+  display inline-block
+  height 0.6rem
+  line-height 0.6rem
+  .square
     display inline-block
-    height 0.6rem
-    line-height 0.6rem
-    .square
-      display inline-block
-      height 0.16rem
-      width 0.16rem
-      background-color $bgColor
-      vertical-align middle
-    .item-title
-      font-size 0.16rem
-      font-weight bold
-  .agreeBtn
-    width 80vw
-    height 0.8rem
-    line-height 0.8rem
-    margin auto
+    height 0.16rem
+    width 0.16rem
     background-color $bgColor
-    text-align center
-    border-radius 0.1rem
-    color #fff
+    vertical-align middle
+  .item-title
+    font-size 0.16rem
+    font-weight bold
+.agreeBtn
+  width 80vw
+  height 0.8rem
+  line-height 0.8rem
+  margin auto
+  background-color $bgColor
+  text-align center
+  border-radius 0.1rem
+  color #fff
 </style>

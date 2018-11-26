@@ -7,6 +7,7 @@ import fastClick from 'fastclick'
 import axios from '@/util/http'
 import 'lib-flexible/flexible.js'
 import 'babel-polyfill'
+import '@/assets/styles/global.css'
 import { AlertPlugin, Toast } from 'vux'
 Vue.use(AlertPlugin, Toast)
 
