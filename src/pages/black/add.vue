@@ -11,7 +11,7 @@
           <div class="reson-item" v-for="i in img" :key="i.value" @click="selectBlackReason(i)">
             <img class="reson-item-img" :src="i.src[0]" alt="img.title" v-show='!i.state'>
             <img class="reson-item-img" :src="i.src[1]" alt="img.title" v-show='i.state'>
-            <div class="reson-item-img reson-item-title">{{i.title}}</div>
+            <div class="reson-item-title">{{i.title}}</div>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@ export default {
     padding-left 0.1333rem
     color #fff
   .box-middle
-    height 30%
+    height 36%
     background #ffffff
     display: flex
     flex-wrap: wrap
@@ -140,5 +140,7 @@ export default {
         .reson-item-img
           width 60%
           padding 0 20%
+        .reson-item-title
+          width 100%
           text-align center
 </style>
