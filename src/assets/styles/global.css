@@ -14,3 +14,11 @@
   margin-top: 1em !important;
   width: 80vw !important;
 }
+/* font-size */
+.font-size-30 {
+  font-size: 0.8rem !important;
+}
+/* font-color */
+.font-color-FFF {
+  color: #fff !important;
+}
