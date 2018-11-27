@@ -29,7 +29,7 @@
         “绿盾”将尽最大努力提供精准的骚扰电话拦截服务，并不断完善产品功能。
       </p>
       <router-link to="/bind">
-        <div class="agreeBtn">确定并绑定手机号</div>
+        <div class="agreeBtn globalBtn">确定并绑定手机号</div>
       </router-link>
     </div>
   </div>

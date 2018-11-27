@@ -3,9 +3,14 @@
   /* padding-top: 1rem; */
   line-height: 0.4rem;
 }
-.text-align-l{
+.text-align-l {
   text-align: left !important;
 }
-.font-indent{
-  text-indent:2em;
+.font-indent {
+  text-indent: 2em;
+}
+/* 通用btn */
+.globalBtn {
+  margin-top: 1em !important;
+  width: 80vw !important;
 }

@@ -16,8 +16,8 @@
         </div>
       </div>
       <div class="box-bottom">
-        <x-button type="primary" style="margin-top:1em;width:80vw">立即添加</x-button>
-        <x-button type="default" style="margin-top:1em;width:80vw">黑名单列表</x-button>
+        <x-button type="primary" class="globalBtn">立即添加</x-button>
+        <x-button type="default" class="globalBtn">黑名单列表</x-button>
       </div>
     </div>
   </div>

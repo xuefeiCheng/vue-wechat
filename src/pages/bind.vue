@@ -9,7 +9,7 @@
         <x-button slot="right" type="primary" mini>发送验证码</x-button>
       </x-input>
     </group>
-    <x-button type="primary" style="margin-top:1em;width:80vw" :disabled="btnState">确定</x-button>
+    <x-button type="primary" class="globalBtn" :disabled="btnState">确定</x-button>
     <tabbar>
       <div class="agreeBindDiv">
         <input type="checkbox" v-model="agreeBind" />{{text}}
