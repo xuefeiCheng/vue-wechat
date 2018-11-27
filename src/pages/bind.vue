@@ -10,6 +10,7 @@
       </x-input>
     </group>
     <x-button type="primary" class="globalBtn" :disabled="btnState" @click.native="insertUser">确定</x-button>
+    <x-button type="primary" class="globalBtn" :disabled="btnState" @click.native="deleUser">取消注册</x-button>
     <tabbar>
       <div class="agreeBindDiv">
         <input type="checkbox" v-model="agreeBind" />{{text}}
@@ -41,6 +42,9 @@ export default {
   methods: {
     insertUser () {
       sessionStorage.setItem('hasUser', true)
+    },
+    deleUser () {
+      sessionStorage.setItem('hasUser', null)
     }
   },
   computed: {

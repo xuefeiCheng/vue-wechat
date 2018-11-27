@@ -39,7 +39,7 @@ const router = new Router({
 
 // 全局路由开始守卫
 router.beforeEach((to, from, next) => {
-  console.log(sessionStorage.getItem('testKey'))
+  console.log(sessionStorage.getItem('hasUser'))
   next()
 })
 
