@@ -6,32 +6,43 @@ import Bind from '@/pages/bind'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/agree',
-      name: 'Agree',
-      component: Agree
-    },
-    {
-      path: '/bind',
-      name: 'Bind',
-      component: Bind
-    },
-    {
-      path: '/black/list',
-      name: 'ListBlack',
-      component: () => import('@/pages/black/black')
-    },
-    {
-      path: '/black/add',
-      name: 'AddBlack',
-      component: () => import('@/pages/black/add')
-    }
-  ]
+const initialRouteMap = [
+  {
+    path: '/',
+    name: 'HelloWorld',
+    component: HelloWorld
+  },
+  {
+    path: '/agree',
+    name: 'Agree',
+    component: Agree
+  },
+  {
+    path: '/bind',
+    name: 'Bind',
+    component: Bind
+  },
+  {
+    path: '/black/list',
+    name: 'ListBlack',
+    component: () => import('@/pages/black/black')
+  },
+  {
+    path: '/black/add',
+    name: 'AddBlack',
+    component: () => import('@/pages/black/add')
+  }
+]
+const router = new Router({
+  routes: initialRouteMap
 })
+
+// 全局路由开始守卫
+router.beforeEach((to, from, next) => {
+  next()
+})
+
+// 全局路由结束守卫
+router.afterEach(() => {
+})
+export default router
