@@ -5,8 +5,8 @@
       <div class="box-top">
         <div class="top-row input-group">
           <input class="qh form-control" placeholder="区号"/>
-          <input class="phone form-control" placeholder="手机或固话号" />
-          <div class='lxr'><i class="iconfont icon-lianxiren font-size-30 font-color-FFF"></i></div>
+          <input class="phone form-control border-noRedius-r" placeholder="手机或固话号" />
+          <div class='lxr border-radius-12 border-noRedius-l'><i class="iconfont icon-lianxiren font-size-30 font-color-FFF"></i></div>
         </div>
       </div>
       <div class="box-info">手机无需区号，添加后，黑名单中的号码来电会被直接拦截</div>
@@ -133,7 +133,6 @@ export default {
       .lxr
         background #23d4ea
         border-left: 1px solid #fff
-        border-radius: 0 0.16rem 0.16rem 0
         line-height 1.2rem
         width 1rem
   .box-info
