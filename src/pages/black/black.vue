@@ -34,12 +34,27 @@
         </span>
       </cell>
     </group>
+    <swipeout class="vux-1px-tb">
+      <swipeout-item transition-mode="follow" v-for="i in 3" :key="i">
+        <div slot="right-menu">
+          <swipeout-button type="warn" @click.native="onButtonClick('delete')">删除</swipeout-button>
+        </div>
+        <div slot="content" :class="{'vux-1px-b': i !== 3, 'vux-1px-t': i === 1}">
+          <cell inline-desc='2018/11/22 15:27:40'>
+            <span slot="title">
+              <span style="vertical-align:middle;font-size:17px;">7615248952</span>
+              <badge text="教育培训"></badge>
+            </span>
+          </cell>
+        </div>
+      </swipeout-item>
+    </swipeout>
   </div>
 </template>
 
 <script>
 import WeHeader from '@/components/Header'
-import { Search, Group, Cell, XButton, Badge } from 'vux'
+import { Search, Group, Cell, XButton, Badge, Swipeout, SwipeoutItem, SwipeoutButton } from 'vux'
 
 export default {
   name: 'agree',
@@ -49,7 +64,10 @@ export default {
     Group,
     Cell,
     XButton,
-    Badge
+    Badge,
+    Swipeout,
+    SwipeoutItem,
+    SwipeoutButton
   },
   data () {
     return {
@@ -82,6 +100,9 @@ export default {
     },
     onDeleteItem () {
       console.log('on delete')
+    },
+    onButtonClick (type) {
+      alert('on button click ' + type)
     }
   }
 }
@@ -98,8 +119,10 @@ function getResult (val) {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="stylus">
-.vux-search-fixed
-  position relative !important
-  top 0 !important
+<style scoped lang="less">
+@import '~vux/src/styles/1px.less';
+.vux-search-fixed {
+  position: relative !important;
+  top: 0 !important;
+}
 </style>
