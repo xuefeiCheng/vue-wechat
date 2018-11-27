@@ -3,7 +3,11 @@
     <we-header :WeTitle="title"></we-header>
     <div class="add-box">
       <div class="box-top">
-        <div></div>
+        <div class="top-row">
+          <div class="qh"></div>
+          <div class="phone"></div>
+          <div class='lxr'><i class="iconfont icon-lianxiren font-size-30 font-color-FFF"></i></div>
+        </div>
       </div>
       <div class="box-info">手机无需区号，添加后，黑名单中的号码来电会被直接拦截</div>
       <div class="box-middle">
@@ -116,6 +120,23 @@ export default {
   .box-top
     height 3.5467rem
     background $bgColor
+    .top-row
+      box-sizing border-box
+      display flex
+      height 2.2rem
+      justify-content center
+      padding-top 1rem
+      .qh
+        width 2rem
+        background red
+        margin-right 0.2667rem
+      .phone
+        width 5rem
+        background green
+      .lxr
+        background #23d4ea
+        line-height 1.2rem
+        width 1rem
   .box-info
     height 0.5333rem
     line-height 0.5333rem
