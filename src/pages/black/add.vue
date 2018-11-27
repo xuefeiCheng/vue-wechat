@@ -114,7 +114,7 @@ export default {
   height 100vh
   background #cccccc
   .box-top
-    height 20%
+    height 3.5467rem
     background $bgColor
   .box-info
     height 0.5333rem
@@ -123,7 +123,7 @@ export default {
     padding-left 0.1333rem
     color #fff
   .box-middle
-    height 36%
+    height 6.4rem
     background #ffffff
     display: flex
     flex-wrap: wrap
