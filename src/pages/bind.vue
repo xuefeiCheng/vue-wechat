@@ -9,7 +9,8 @@
         <x-button slot="right" type="primary" mini>发送验证码</x-button>
       </x-input>
     </group>
-    <x-button type="primary" class="globalBtn" :disabled="btnState" @click="insertUser">确定</x-button>
+    <x-button type="primary" class="globalBtn" :disabled="btnState" @click.native="insertUser">确定</x-button>
+    <x-button type="primary" class="globalBtn" :disabled="btnState" @click.native="deleUser">取消注册</x-button>
     <tabbar>
       <div class="agreeBindDiv">
         <input type="checkbox" v-model="agreeBind" />{{text}}
@@ -20,7 +21,7 @@
 
 <script>
 import WeHeader from '@/components/Header'
-import { Group, XInput, XButton, Tabbar } from 'vux'
+import { Group, XInput, XButton, Tabbar, cookie } from 'vux'
 export default {
   name: 'bind',
   components: {
@@ -40,7 +41,10 @@ export default {
   },
   methods: {
     insertUser () {
-      sessionStorage.setItem('hasUser', true)
+      cookie.set('hasUser', true)
+    },
+    deleUser () {
+      cookie.remove('hasUser')
     }
   },
   computed: {
