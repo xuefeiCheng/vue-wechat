@@ -83,11 +83,6 @@ export default {
     onDeleteItem () {
       console.log('on delete')
     }
-  },
-  mounted () {
-    this.axios.get('/api/sug?code=utf-8&q="卫衣"&callback=cb').then((resp) => {
-      console.log(resp)
-    })
   }
 }
 function getResult (val) {

@@ -11,7 +11,6 @@
     </group>
     <x-button type="primary" class="globalBtn" :disabled="btnState" @click.native="insertUser">确定</x-button>
     <x-button type="primary" class="globalBtn" :disabled="btnState" @click.native="deleUser">取消注册</x-button>
-    <x-button type="primary" class="globalBtn" :disabled="btnState" @click.native="updateUser">axios</x-button>
     <tabbar>
       <div class="agreeBindDiv">
         <input type="checkbox" v-model="agreeBind" />{{text}}
@@ -51,11 +50,6 @@ export default {
     },
     deleUser () {
       sessionStorage.setItem('hasUser', null)
-    },
-    updateUser () {
-      this.axios.get('/api/sug?code=utf-8&q="卫衣"&callback=cb').then((resp) => {
-        console.log(resp)
-      })
     }
   },
   computed: {
