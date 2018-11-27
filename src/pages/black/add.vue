@@ -116,7 +116,6 @@ export default {
 .add-box
   width 100vw
   height 100vh
-  background #cccccc
   .box-top
     height 3.5467rem
     background $bgColor
