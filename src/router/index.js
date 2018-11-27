@@ -58,11 +58,8 @@ router.beforeEach((to, from, next) => {
     let hasUser = sessionStorage.getItem('hasUser')
     if (hasUser === 'null') {
       console.log('没有注册')
-      console.log(to.fullPath)
-      next({
-        path: '/agree',
-        query: {redirect: to.fullPath}// 将跳转的路由path作为参数，登录成功后跳转到该路由
-      })
+      sessionStorage.setItem('targetPath', to.fullPath)
+      next('/agree')
     } else {
       next()
     }

@@ -42,8 +42,8 @@ export default {
   methods: {
     insertUser () {
       sessionStorage.setItem('hasUser', true)
-      console.log(this.$route.query.redirect)
-      let redirect = decodeURIComponent(this.$route.query.redirect || '/')
+      let targetPath = sessionStorage.getItem('targetPath')
+      let redirect = decodeURIComponent(targetPath || '/')
       this.$router.push({// 你需要接受路由的参数再跳转
         path: redirect
       })
