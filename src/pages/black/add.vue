@@ -135,6 +135,7 @@ export default {
         background green
       .lxr
         background #23d4ea
+        border-left: 1px solid #fff
         border-radius: 0 0.16rem 0.16rem 0
         line-height 1.2rem
         width 1rem
