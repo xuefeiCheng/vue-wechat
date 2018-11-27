@@ -38,7 +38,7 @@ export default {
       text: '开通即代表同意<<"绿盾"防护的服务条款>>'
     }
   },
-  meghods: {
+  methods: {
     insertUser () {
       sessionStorage.setItem('hasUser', true)
     }
