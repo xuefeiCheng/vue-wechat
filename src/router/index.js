@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Agree from '@/pages/agree'
 import Bind from '@/pages/bind'
-import { cookie } from 'vux'
 
 Vue.use(Router)
 
@@ -40,7 +39,7 @@ const router = new Router({
 
 // 全局路由开始守卫
 router.beforeEach((to, from, next) => {
-  console.log(cookie.get('hasUser'))
+  console.log(sessionStorage.getItem('testKey'))
   next()
 })
 
