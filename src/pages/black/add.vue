@@ -3,9 +3,9 @@
     <we-header :WeTitle="title"></we-header>
     <div class="add-box">
       <div class="box-top">
-        <div class="top-row">
-          <div class="qh"></div>
-          <div class="phone"></div>
+        <div class="top-row input-group">
+          <input class="qh form-control" placeholder="区号"/>
+          <input class="phone form-control" placeholder="手机或固话号" />
           <div class='lxr'><i class="iconfont icon-lianxiren font-size-30 font-color-FFF"></i></div>
         </div>
       </div>
@@ -128,11 +128,9 @@ export default {
       padding-top 1rem
       .qh
         width 2rem
-        background red
         margin-right 0.2667rem
       .phone
         width 5rem
-        background green
       .lxr
         background #23d4ea
         border-left: 1px solid #fff
