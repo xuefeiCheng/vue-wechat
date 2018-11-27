@@ -10,25 +10,40 @@ const initialRouteMap = [
   {
     path: '/',
     name: 'HelloWorld',
+    meta: {
+      requireAuth: false
+    },
     component: HelloWorld
   },
   {
     path: '/agree',
     name: 'Agree',
+    meta: {
+      requireAuth: false // 添加该字段，表示进入这个路由是需要验证
+    },
     component: Agree
   },
   {
     path: '/bind',
     name: 'Bind',
+    meta: {
+      requireAuth: false
+    },
     component: Bind
   },
   {
     path: '/black/list',
     name: 'ListBlack',
+    meta: {
+      requireAuth: true
+    },
     component: () => import('@/pages/black/black')
   },
   {
     path: '/black/add',
+    meta: {
+      requireAuth: true
+    },
     name: 'AddBlack',
     component: () => import('@/pages/black/add')
   }
@@ -39,8 +54,21 @@ const router = new Router({
 
 // 全局路由开始守卫
 router.beforeEach((to, from, next) => {
-  console.log(sessionStorage.getItem('hasUser'))
-  next()
+  if (to.meta.requireAuth) {
+    let hasUser = sessionStorage.getItem('hasUser')
+    if (hasUser === 'null') {
+      console.log('没有注册')
+      console.log(to.fullPath)
+      next({
+        path: '/agree',
+        query: {redirect: to.fullPath}// 将跳转的路由path作为参数，登录成功后跳转到该路由
+      })
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
 })
 
 // 全局路由结束守卫
