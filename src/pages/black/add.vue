@@ -126,7 +126,7 @@ export default {
       justify-content center
       padding-top 1rem
       .qh
-        width 2rem
+        width 1.5rem
         margin-right 0.2667rem
       .phone
         width 5rem
