@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
+import Test from '@/pages/black/list'
 import Agree from '@/pages/agree'
 import Bind from '@/pages/bind'
 
@@ -14,6 +15,14 @@ const initialRouteMap = [
       requireAuth: false
     },
     component: HelloWorld
+  },
+  {
+    path: '/test',
+    name: 'test',
+    meta: {
+      requireAuth: false
+    },
+    component: Test
   },
   {
     path: '/agree',

@@ -8,6 +8,9 @@
         <router-link to="/agree">免责声明</router-link>
       </li>
       <li>
+        <router-link to="/test">测试界面</router-link>
+      </li>
+      <li>
         <router-link to="/black/list">黑名单管理</router-link>
       </li>
     </ul>
