@@ -42,6 +42,9 @@ export default {
   components: {
     WeHeader
   },
+  mounted () {
+    console.log(this.$route.query.redirect)
+  },
   data () {
     return {
       title: '免责声明',
