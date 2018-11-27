@@ -22,6 +22,18 @@
 .font-color-FFF {
   color: #fff !important;
 }
+/* border-redius */
+.border-radius-12 {
+  border-radius: 0.16rem;
+}
+.border-noRedius-l {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+.border-noRedius-r {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
 /* from */
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
   color:#fff;
@@ -45,14 +57,14 @@
   display: table;
   border-collapse: separate;
 }
-.input-group .form-control:last-child {
+/* .input-group .form-control:last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-}
-.input-group .form-control:nth-last-child(2) {
+} */
+/* .input-group .form-control:nth-last-child(2) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-}
+} */
 .input-group .form-control {
   display: table-cell;
   position: relative;
