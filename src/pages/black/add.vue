@@ -21,7 +21,7 @@
       </div>
       <div class="box-bottom">
         <x-button type="primary" class="globalBtn" @click.native="setFoucs">立即添加</x-button>
-        <x-button type="default" class="globalBtn">黑名单列表</x-button>
+        <x-button type="default" class="globalBtn" link="/black/list">黑名单列表</x-button>
       </div>
     </div>
   </div>
