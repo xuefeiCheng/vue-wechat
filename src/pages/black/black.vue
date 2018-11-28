@@ -49,12 +49,14 @@
         </div>
       </swipeout-item>
     </swipeout>
+    <actionsheet v-model="show" :menus="menus" @on-click-menu="click" @on-click-menu-delete="onDelete" show-cancel></actionsheet>
+    <toast v-model="showSuccess">删除成功</toast>
   </div>
 </template>
 
 <script>
 import WeHeader from '@/components/Header'
-import { Search, Group, Cell, XButton, Badge, Swipeout, SwipeoutItem, SwipeoutButton } from 'vux'
+import { Search, Group, Cell, XButton, Badge, Swipeout, SwipeoutItem, SwipeoutButton, Actionsheet, Toast } from 'vux'
 
 export default {
   name: 'agree',
@@ -67,16 +69,30 @@ export default {
     Badge,
     Swipeout,
     SwipeoutItem,
-    SwipeoutButton
+    SwipeoutButton,
+    Actionsheet,
+    Toast
   },
   data () {
     return {
       title: '黑名单列表',
       results: [],
-      value: ''
+      value: '',
+      show: false,
+      menus: {
+        'title.noop': '确定咩?<br/><span style="color:#666;font-size:12px;">删除后就无法撤消了哦</span>',
+        delete: '<span style="color:red">删除</span>'
+      },
+      showSuccess: false
     }
   },
   methods: {
+    click (key) {
+      console.log(key)
+    },
+    onDelete () {
+      this.showSuccess = true
+    },
     resultClick (item) {
       window.alert('you click the result item: ' + JSON.stringify(item))
     },
@@ -99,6 +115,7 @@ export default {
       console.log('on cancel')
     },
     onDeleteItem () {
+      this.show = true
       console.log('on delete')
     },
     onButtonClick (type) {

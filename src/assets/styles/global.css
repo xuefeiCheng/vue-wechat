@@ -2,6 +2,9 @@
 .weui-cells-top0 {
   margin-top: 0 !important;
 }
+.weui-toast {
+  width: 9em !important;
+}
 .box {
   padding: 0.2rem;
   /* padding-top: 1rem; */
