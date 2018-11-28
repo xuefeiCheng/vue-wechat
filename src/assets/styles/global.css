@@ -32,6 +32,10 @@
 .font-color-FFF {
   color: #fff !important;
 }
+/* background */
+.bgColorGreen {
+  background-color: green !important;
+}
 /* border-redius */
 .border-radius-12 {
   border-radius: 0.16rem;

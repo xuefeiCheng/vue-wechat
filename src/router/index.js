@@ -61,8 +61,16 @@ const initialRouteMap = [
     meta: {
       requireAuth: true
     },
-    name: 'AddBlack',
+    name: 'ListWhite',
     component: () => import('@/pages/white/list')
+  },
+  {
+    path: '/white/add',
+    meta: {
+      requireAuth: true
+    },
+    name: 'AddWhite',
+    component: () => import('@/pages/white/add')
   }
 ]
 const router = new Router({

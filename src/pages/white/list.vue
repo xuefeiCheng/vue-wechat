@@ -11,7 +11,7 @@
     @on-cancel="onCancel"
     @on-submit="onSubmit"
     ref="search"></search>
-    <router-link to="/black/add">
+    <router-link to="/white/add">
       <group>
         <cell title="添加白名单" class="weui-cells-top0">
           <i class="iconfont icon-plus1-copy font-size-17" slot="icon"></i>
@@ -23,14 +23,14 @@
         <x-icon type="ios-minus-outline" class="cell-x-icon" @click="onDeleteItem"></x-icon>
         <span slot="title">
           <span style="vertical-align:middle;">7615248952</span>
-          <badge text="教育培训"></badge>
+          <badge text="教育培训" class="bgColorGreen"></badge>
         </span>
       </cell>
       <cell inline-desc='2018/11/22 15:27:40'>
         <x-icon type="ios-minus-outline" class="cell-x-icon"></x-icon>
         <span slot="title">
           <span style="vertical-align:middle;">17615864102</span>
-          <badge text="教育培训"></badge>
+          <badge text="教育培训" class="bgColorGreen"></badge>
         </span>
       </cell>
     </group>
@@ -43,7 +43,7 @@
           <cell inline-desc='2018/11/22 15:27:40'>
             <span slot="title">
               <span style="vertical-align:middle;font-size:17px;">7615248952</span>
-              <badge text="教育培训"></badge>
+              <badge text="教育培训" class="bgColorGreen"></badge>
             </span>
           </cell>
         </div>
@@ -59,7 +59,7 @@ import WeHeader from '@/components/Header'
 import { Search, Group, Cell, XButton, Badge, Swipeout, SwipeoutItem, SwipeoutButton, Actionsheet, Toast } from 'vux'
 
 export default {
-  name: 'agree',
+  name: 'ListWhite',
   components: {
     WeHeader,
     Search,
