@@ -15,7 +15,6 @@
       <group>
         <cell title="添加黑名单" class="weui-cells-top0">
           <i class="iconfont icon-plus1-copy font-size-17" slot="icon"></i>
-          <!-- <x-icon type="ios-plus-outline" class="cell-x-icon" slot="icon" style="padding-top:8px"></x-icon> -->
         </cell>
       </group>
     </router-link>
@@ -125,5 +124,9 @@ function getResult (val) {
 .vux-search-fixed {
   position: relative !important;
   top: 0 !important;
+}
+.vux-x-icon {
+  fill: #F70968;
+  fill: #f74c31;
 }
 </style>
