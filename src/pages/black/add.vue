@@ -5,7 +5,7 @@
       <div class="box-top">
         <div class="top-row input-group">
           <input class="qh form-control" placeholder="区号"/>
-          <input class="phone form-control border-noRedius-r" placeholder="手机或固话号" />
+          <input class="phone form-control border-noRedius-r" ref="phone" placeholder="手机或固话号" />
           <div class='lxr border-radius-12 border-noRedius-l'><i class="iconfont icon-lianxiren font-size-30 font-color-FFF"></i></div>
         </div>
       </div>
@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="box-bottom">
-        <x-button type="primary" class="globalBtn">立即添加</x-button>
+        <x-button type="primary" class="globalBtn" @click.native="setFoucs">立即添加</x-button>
         <x-button type="default" class="globalBtn">黑名单列表</x-button>
       </div>
     </div>
@@ -105,6 +105,10 @@ export default {
         i.state = true
         // console.log(i)
       })
+    },
+    setFoucs () {
+      // 若没有数据 设置焦点到 手机号或区号
+      this.$refs.phone.focus()
     }
   }
 }
