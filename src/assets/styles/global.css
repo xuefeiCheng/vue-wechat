@@ -1,3 +1,7 @@
+/* 更改ui框架样式 */
+.weui-cells-top0 {
+  margin-top: 0 !important;
+}
 .box {
   padding: 0.2rem;
   /* padding-top: 1rem; */
@@ -17,6 +21,9 @@
 /* font-size */
 .font-size-30 {
   font-size: 0.8rem !important;
+}
+.font-size-17 {
+  font-size: 0.4533rem !important;
 }
 /* font-color */
 .font-color-FFF {

@@ -13,8 +13,9 @@
     ref="search"></search>
     <router-link to="/black/add">
       <group>
-        <cell title="添加黑名单">
-          <x-icon type="ios-plus-outline" class="cell-x-icon" slot="icon" style="padding-top:8px"></x-icon>
+        <cell title="添加黑名单" class="weui-cells-top0">
+          <i class="iconfont icon-plus1-copy font-size-17" slot="icon"></i>
+          <!-- <x-icon type="ios-plus-outline" class="cell-x-icon" slot="icon" style="padding-top:8px"></x-icon> -->
         </cell>
       </group>
     </router-link>
