@@ -19,6 +19,7 @@
           </div>
         </div>
       </div>
+      <div class="box-middle"></div>
     </div>
   </div>
 </template>
