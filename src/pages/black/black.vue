@@ -14,7 +14,7 @@
     <router-link to="/black/add">
       <group>
         <cell title="添加黑名单">
-          <x-icon type="ios-plus-outline" class="cell-x-icon" slot="icon"></x-icon>
+          <x-icon type="ios-plus-outline" class="cell-x-icon" slot="icon" style="padding-top:8px"></x-icon>
         </cell>
       </group>
     </router-link>
