@@ -3,6 +3,10 @@
     <we-header :WeTitle="title"></we-header>
     <div class="add-box">
       <div class="box-top">
+        <div class="box-info">
+          <i class="iconfont icon-lianxiren font-color-FFF"></i>
+          <span>开启的分类来电时将为您拦截！点击分类修改标记次数！</span>
+        </div>
         <div class="top-row input-group">
           <input class="qh form-control" placeholder="区号"/>
           <input class="phone form-control border-noRedius-r" ref="phone" placeholder="手机或固话号" />
@@ -12,7 +16,6 @@
           <input class="all form-control" placeholder="请填写备注（6字以内）"/>
         </div>
       </div>
-      <div class="box-info">添加后，白名单中的号码不会被拦截</div>
       <div class="box-bottom">
         <x-button type="primary" class="globalBtn" @click.native="setFoucs">立即添加</x-button>
         <x-button type="default" class="globalBtn" link="/white/list">白名单列表</x-button>
@@ -71,8 +74,8 @@ export default {
       .all
         width 8.5rem
   .box-info
-    height 0.5333rem
-    line-height 0.5333rem
+    height 0.7467rem
+    line-height 0.72rem
     background #23d4ea
     padding-left 0.1333rem
     color #fff
