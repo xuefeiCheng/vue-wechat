@@ -4,7 +4,7 @@
     <div class="add-box">
       <div class="box-top">
         <div class="box-info">
-          <i class="iconfont icon-lianxiren font-color-FFF"></i>
+          <i class="iconfont icon-light font-color-FFF"></i>
           <span>开启的分类来电时将为您拦截！点击分类修改标记次数！</span>
         </div>
         <div class="top-row input-group">
