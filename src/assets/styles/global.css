@@ -5,9 +5,9 @@
 .weui-toast {
   width: 9em !important;
 }
+/* self-css */
 .box {
   padding: 0.2rem;
-  /* padding-top: 1rem; */
   line-height: 0.4rem;
 }
 .text-align-l {
@@ -67,14 +67,6 @@
   display: table;
   border-collapse: separate;
 }
-/* .input-group .form-control:last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-} */
-/* .input-group .form-control:nth-last-child(2) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-} */
 .input-group .form-control {
   display: table-cell;
   position: relative;
