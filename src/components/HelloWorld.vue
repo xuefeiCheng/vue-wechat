@@ -13,6 +13,9 @@
       <li>
         <router-link to="/black/list">黑名单管理</router-link>
       </li>
+      <li>
+        <router-link to="/white/list">白名单管理</router-link>
+      </li>
     </ul>
   </div>
 </div>
