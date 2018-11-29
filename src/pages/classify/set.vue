@@ -24,7 +24,7 @@
       @on-hide="onHide">
       <div class="top-row input-group">
         <div class='lxr border-noRedius-r'><span class="font-color-FFF">大于</span></div>
-        <input class="phone form-control border-noRedius-l"  value="200" />
+        <input class="phone form-control border-noRedius-l"  value="200" v-model="ljValue"/>
       </div>
       <div class="box-info"><i class="iconfont icon-jinggao"></i>被标记次数大于设置值才会进行拦截!</div>
       </confirm>
@@ -48,7 +48,8 @@ export default {
   data () {
     return {
       title: '拦截阈值设置',
-      show: true
+      show: true,
+      ljValue: 200
     }
   },
   methods: {
@@ -57,7 +58,7 @@ export default {
     },
     onConfirm (value) {
       this.$refs.confirm.setInputValue('')
-      this.$vux.toast.text('input value: ' + value)
+      this.$vux.toast.text('input value: ' + this.ljValue)
     },
     onCancel () {
       console.log('on cancel')
