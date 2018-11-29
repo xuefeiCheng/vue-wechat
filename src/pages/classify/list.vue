@@ -31,6 +31,11 @@
           <x-switch title="教育培训" v-model="value"></x-switch>
           <x-switch title="招聘猎头" v-model="value"></x-switch>
         </group>
+        <group>
+          <cell title="拦截阈值" link="/" inline-desc="被标记超过一定次数时拦截">
+            <span slot="value" class="font-size-12">50次（建议值）</span>
+          </cell>
+        </group>
       </div>
     </div>
   </div>
@@ -38,7 +43,7 @@
 
 <script>
 import WeHeader from '@/components/Header'
-import { XSwitch, Group } from 'vux'
+import { XSwitch, Group, Cell } from 'vux'
 const classify = {
   true: {
     stateMsg: '骚扰拦截已开启',
@@ -55,7 +60,8 @@ export default {
   components: {
     WeHeader,
     XSwitch,
-    Group
+    Group,
+    Cell
   },
   data () {
     return {
