@@ -7,18 +7,25 @@
       </div>
       <div class="personNum">17615839470</div>
     </div>
+    <group title="通知提醒">
+      <radio :options="radio001" value="不通知"></radio>
+    </group>
   </div>
 </template>
 
 <script>
 import WeHeader from '@/components/Header'
+import { Radio, Group } from 'vux'
 export default {
   components: {
-    WeHeader
+    WeHeader,
+    Radio,
+    Group
   },
   data () {
     return {
-      title: '个人中心'
+      title: '个人中心',
+      radio001: [ '不通知', '短信拦截通知', '微信拦截通知' ]
     }
   }
 }
