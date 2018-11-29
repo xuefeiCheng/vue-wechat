@@ -19,6 +19,9 @@
       <li>
         <router-link to="/classify/list">拦截分类设置</router-link>
       </li>
+      <li>
+        <router-link to="/classify/search">拦截记录查询</router-link>
+      </li>
     </ul>
   </div>
 </div>

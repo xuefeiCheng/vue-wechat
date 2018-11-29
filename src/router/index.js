@@ -87,6 +87,14 @@ const initialRouteMap = [
     },
     name: 'setClassify',
     component: () => import('@/pages/classify/set')
+  },
+  {
+    path: '/classify/search',
+    meta: {
+      requireAuth: true
+    },
+    name: 'searchClassify',
+    component: () => import('@/pages/classify/search')
   }
 ]
 const router = new Router({
