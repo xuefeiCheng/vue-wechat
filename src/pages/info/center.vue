@@ -2,7 +2,10 @@
   <div>
     <we-header :WeTitle="title"></we-header>
     <div class="center">
-      <div class="person"><div class="per-middle">111</div></div>
+      <div class="person">
+        <div class="per-middle"><i class="BigSize iconfont icon-duorenhuiyi font-color-FFF"></i></div>
+      </div>
+      <div class="personNum">17615839470</div>
     </div>
   </div>
 </template>
@@ -30,11 +33,18 @@ export default {
     box-sizing border-box
     display table
     height 5rem
-    padding-top 2rem
     width 3rem
     margin auto
     .per-middle
-      background red
       display table-cell
       vertical-align middle
+      .BigSize
+        font-size 3rem
+  .personNum
+    box-sizing border-box
+    color #ffffff
+    font-size 28px
+    margin auto
+    text-align center
+    width 6rem
 </style>
