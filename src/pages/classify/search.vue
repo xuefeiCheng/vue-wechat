@@ -11,6 +11,8 @@
       <div class="box-middle">
         <group class="weui-cells-top0">
           <cell title="暂无拦截记录"></cell>
+          <cell title="17615839540" value="3次"></cell>
+          <cell title="17615839650" value="2次"></cell>
         </group>
       </div>
     </div>
