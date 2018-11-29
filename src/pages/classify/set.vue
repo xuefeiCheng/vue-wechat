@@ -26,7 +26,7 @@
         <div class='lxr border-noRedius-r'><span class="font-color-FFF">大于</span></div>
         <input class="phone form-control border-noRedius-l"  value="200" />
       </div>
-      <div class="box-info"><i class="iconfont icon-lianxiren"></i>被标记次数大于设置值才会进行拦截!</div>
+      <div class="box-info"><i class="iconfont icon-jinggao-copy"></i>被标记次数大于设置值才会进行拦截!</div>
       </confirm>
     </div>
   </div>
