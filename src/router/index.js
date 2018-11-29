@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Test from '@/pages/black/list'
-import Agree from '@/pages/agree'
-import Bind from '@/pages/bind'
+import Agree from '@/pages/info/agree'
+import Bind from '@/pages/info/bind'
 
 Vue.use(Router)
 
@@ -105,7 +105,7 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   if (to.meta.requireAuth) {
     let hasUser = sessionStorage.getItem('hasUser')
-    if (hasUser === null) {
+    if (hasUser === null || hasUser === 'null') {
       console.log('没有注册')
       sessionStorage.setItem('targetPath', to.fullPath)
       next('/agree')
