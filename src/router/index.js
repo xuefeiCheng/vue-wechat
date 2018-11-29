@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Test from '@/pages/black/list'
 import Agree from '@/pages/info/agree'
 import Bind from '@/pages/info/bind'
+import Center from '@/pages/info/center'
 
 Vue.use(Router)
 
@@ -31,6 +32,14 @@ const initialRouteMap = [
       requireAuth: false // 添加该字段，表示进入这个路由是需要验证
     },
     component: Agree
+  },
+  {
+    path: '/center',
+    name: 'Center',
+    meta: {
+      requireAuth: true // 添加该字段，表示进入这个路由是需要验证
+    },
+    component: Center
   },
   {
     path: '/bind',
