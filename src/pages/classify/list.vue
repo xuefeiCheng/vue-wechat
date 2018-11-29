@@ -9,17 +9,19 @@
         </div>
         <div class="top-row">
           <div class="row-left">
-            <div class="classifyIcon"></div>
+            <div class="classifyIcon" :class="classifyState.class"></div>
           </div>
           <div class='row-right'>
             <div class="classifyCon font-color-FFF font-size-17">
-              <div class="con-top">骚扰拦截已开启</div>
-              <div class="con-top con-top-button">拦截关闭</div>
+              <div class="con-top">{{classifyState.stateMsg}}</div>
+              <div class="con-top con-top-button" @click="onSubmitState">{{classifyState.btnMsg}}</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="box-middle"></div>
+      <div class="box-middle" v-show="stateFlag">
+        hello
+      </div>
     </div>
   </div>
 </template>
@@ -27,6 +29,18 @@
 <script>
 import WeHeader from '@/components/Header'
 import { XButton } from 'vux'
+const classify = {
+  true: {
+    stateMsg: '骚扰拦截已开启',
+    btnMsg: '关闭拦截',
+    class: 'bgOne'
+  },
+  false: {
+    stateMsg: '骚扰拦截已关闭',
+    btnMsg: '开启拦截',
+    class: 'bgTwo'
+  }
+}
 export default {
   components: {
     WeHeader,
@@ -34,7 +48,15 @@ export default {
   },
   data () {
     return {
-      title: '拦截分类设置'
+      title: '拦截分类设置',
+      stateFlag: true,
+      classifyState: classify[true]
+    }
+  },
+  methods: {
+    onSubmitState () {
+      this.stateFlag = !this.stateFlag
+      this.classifyState = classify[this.stateFlag]
     }
   }
 }
@@ -43,6 +65,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
 @import '~styles/variables.styl'
+.bgOne
+  background url('/static/img/classify/classify_icon_on.png') no-repeat center center
+.bgTwo
+  background url('/static/img/classify/classify_icon_off.png') no-repeat center center
 .add-box
   width 100vw
   height 100vh
@@ -59,7 +85,6 @@ export default {
       .row-left
         flex 0 0 20%
         .classifyIcon
-          background url('/static/img/classify/classify_icon_off.png') no-repeat center center
           background-size auto 70%
           display block
           width 3rem
