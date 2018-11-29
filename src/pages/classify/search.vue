@@ -4,7 +4,7 @@
     <div class="add-box">
       <div class="box-top">
         <div class="box-info">
-          <i class="iconfont icon-light font-color-FFF"></i>
+          <i class="iconfont icon-laba1 font-color-FFF"></i>
           <span>共为您拦截{{num}}次来话</span>
         </div>
       </div>
