@@ -20,7 +20,17 @@
         </div>
       </div>
       <div class="box-middle" v-show="stateFlag">
-        hello
+         <group class="weui-cells-top0">
+          <x-switch title="疑似诈骗" v-model="value"></x-switch>
+          <x-switch title="骚扰电话" v-model="value"></x-switch>
+          <x-switch title="违法犯罪" v-model="value"></x-switch>
+          <x-switch title="响一声" v-model="value"></x-switch>
+          <x-switch title="广告推销" v-model="value"></x-switch>
+          <x-switch title="房产中介" v-model="value"></x-switch>
+          <x-switch title="保险理财" v-model="value"></x-switch>
+          <x-switch title="教育培训" v-model="value"></x-switch>
+          <x-switch title="招聘猎头" v-model="value"></x-switch>
+        </group>
       </div>
     </div>
   </div>
@@ -28,7 +38,7 @@
 
 <script>
 import WeHeader from '@/components/Header'
-import { XButton } from 'vux'
+import { XSwitch, Group } from 'vux'
 const classify = {
   true: {
     stateMsg: '骚扰拦截已开启',
@@ -44,13 +54,15 @@ const classify = {
 export default {
   components: {
     WeHeader,
-    XButton
+    XSwitch,
+    Group
   },
   data () {
     return {
       title: '拦截分类设置',
       stateFlag: true,
-      classifyState: classify[true]
+      classifyState: classify[true],
+      value: true
     }
   },
   methods: {
@@ -65,6 +77,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
 @import '~styles/variables.styl'
+.weui-cells-top0 >>> .vux-no-group-title {
+  margin-top 2px
+}
 .bgOne
   background url('/static/img/classify/classify_icon_on.png') no-repeat center center
 .bgTwo
@@ -107,10 +122,10 @@ export default {
             background #c71010
             border 1px solid #c71010
             border-radius 2px
-  .box-info
-    height 0.7467rem
-    line-height 0.72rem
-    background #23d4ea
-    color #fff
-    text-align center
+    .box-info
+      height 0.7467rem
+      line-height 0.72rem
+      background #23d4ea
+      color #fff
+      text-align center
 </style>
