@@ -8,7 +8,7 @@
       <div class="personNum">17615839470</div>
     </div>
     <group title="通知提醒">
-      <radio :options="radio001" value="不通知"></radio>
+      <radio :options="radio001" value="001" @on-change="change"></radio>
     </group>
   </div>
 </template>
@@ -25,7 +25,24 @@ export default {
   data () {
     return {
       title: '个人中心',
-      radio001: [ '不通知', '短信拦截通知', '微信拦截通知' ]
+      radio001: [{
+        icon: '/static/img/black/addblack_400.png',
+        key: '001',
+        value: '不通知'
+      }, {
+        icon: '/static/img/black/addblack_400.png',
+        key: '002',
+        value: '短信拦截通知'
+      }, {
+        icon: '/static/img/black/addblack_400.png',
+        key: '003',
+        value: '微信拦截通知'
+      }]
+    }
+  },
+  methods: {
+    change (value, label) {
+      console.log('change:', value, label)
     }
   }
 }
