@@ -89,7 +89,7 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   if (to.meta.requireAuth) {
     let hasUser = sessionStorage.getItem('hasUser')
-    if (hasUser === 'null') {
+    if (hasUser === null) {
       console.log('没有注册')
       sessionStorage.setItem('targetPath', to.fullPath)
       next('/agree')
