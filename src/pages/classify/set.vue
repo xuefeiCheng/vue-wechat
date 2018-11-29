@@ -3,8 +3,8 @@
     <we-header :WeTitle="title"></we-header>
     <div class="add-box">
       <group class="weui-cells-top0">
-        <cell title="疑似诈骗">
-          <div slot="value" class="jiantou">200次</div>
+        <cell title="疑似诈骗" @click.native="onClick">
+          <slot><span class="jiantou">200次</span></slot>
         </cell>
         <cell title="骚扰电话" value="200次" link="/"></cell>
         <cell title="违法犯罪" value="200次" link="/"></cell>
@@ -50,11 +50,14 @@ export default {
   data () {
     return {
       title: '拦截阈值设置',
-      show: true,
+      show: false,
       ljValue: 200
     }
   },
   methods: {
+    onClick () {
+      this.show = !this.show
+    },
     onShow () {
       this.$refs.confirm.setInputValue('')
     },
