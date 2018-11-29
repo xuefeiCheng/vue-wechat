@@ -21,6 +21,27 @@
   margin-top: 1em !important;
   width: 80vw !important;
 }
+/* 右箭头 */
+.jiantou {
+  margin-right: 12px;
+}
+.jiantou::before {
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #C8C8CD;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: relative;
+  top: -2px;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 15px;
+}
 /* font-size */
 .font-size-12 {
   font-size: 12px;
