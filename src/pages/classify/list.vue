@@ -21,7 +21,7 @@
       </div>
       <div class="box-middle" v-show="stateFlag">
          <group class="weui-cells-top0">
-          <x-switch title="疑似诈骗" v-model="value"></x-switch>
+          <x-switch title="疑似诈骗" v-model="value" @on-change="onSwitchChange"></x-switch>
           <x-switch title="骚扰电话" v-model="value"></x-switch>
           <x-switch title="违法犯罪" v-model="value"></x-switch>
           <x-switch title="响一声" v-model="value"></x-switch>
@@ -69,6 +69,9 @@ export default {
     onSubmitState () {
       this.stateFlag = !this.stateFlag
       this.classifyState = classify[this.stateFlag]
+    },
+    onSwitchChange (value) {
+      console.log('change-->' + value)
     }
   }
 }
