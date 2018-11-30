@@ -11,7 +11,16 @@
         <router-link to="/center">个人中心</router-link>
       </li>
       <li>
-        <router-link to="/feedback/default">意见反馈</router-link>
+        <router-link to="/feedback/suggest">意见反馈</router-link>
+      </li>
+      <li>
+        <router-link to="/feedback/appeal">号码申诉</router-link>
+      </li>
+      <li>
+        <router-link to="/feedback/others">其他问题</router-link>
+      </li>
+      <li>
+        <router-link to="/feedback/default">默认界面</router-link>
       </li>
       <li>
         <router-link to="/problem">常见问题</router-link>

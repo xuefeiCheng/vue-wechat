@@ -9,7 +9,7 @@
       </group>
     </div>
     <group>
-      <cell title="号码申诉" link="/"></cell>
+      <cell title="号码申诉" link="/feedback/appeal"></cell>
     </group>
   </div>
 </template>
