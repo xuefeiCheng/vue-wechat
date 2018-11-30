@@ -3,15 +3,14 @@
     <we-header :WeTitle="title"></we-header>
     <div class="add-box">
       <group class="weui-cells-top0">
-        <cell title="疑似诈骗" @click.native="onClick" is-link value="200次"></cell>
-        <cell title="骚扰电话" value="200次" is-link></cell>
-        <cell title="违法犯罪" value="200次" is-link></cell>
-        <cell title="响一声" value="200次" is-link></cell>
-        <cell title="广告推销" value="200次" is-link></cell>
-        <cell title="房产中介" value="200次" is-link></cell>
-        <cell title="保险理财" value="200次" is-link></cell>
-        <cell title="教育培训" value="200次" is-link></cell>
-        <cell title="招聘猎头" value="200次" is-link></cell>
+        <cell
+          v-for="item in cellList"
+          :key="item.id"
+          :title="item.title"
+          @click.native="onClick(item.value)"
+          is-link
+          :value="item.value+'次'">
+        </cell>
       </group>
     </div>
     <div v-transfer-dom>
@@ -49,12 +48,51 @@ export default {
     return {
       title: '拦截阈值设置',
       show: false,
-      ljValue: 200
+      ljValue: 200,
+      cellList: [{
+        id: 1,
+        title: '疑似诈骗',
+        value: '200'
+      }, {
+        id: 2,
+        title: '骚扰电话',
+        value: '200'
+      }, {
+        id: 3,
+        title: '违法犯罪',
+        value: '200'
+      }, {
+        id: 4,
+        title: '响一声',
+        value: '200'
+      }, {
+        id: 5,
+        title: '广告推销',
+        value: '200'
+      }, {
+        id: 6,
+        title: '房产中介',
+        value: '200'
+      }, {
+        id: 7,
+        title: '保险理财',
+        value: '200'
+      }, {
+        id: 8,
+        title: '教育培训',
+        value: '20'
+      }, {
+        id: 9,
+        title: '招聘猎头',
+        value: '20'
+      }]
     }
   },
   methods: {
-    onClick () {
+    onClick (value) {
       this.show = !this.show
+      this.ljValue = value
+      console.log(value)
     },
     onShow () {
       this.$refs.confirm.setInputValue('')
