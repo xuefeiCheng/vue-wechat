@@ -11,7 +11,7 @@
         <router-link to="/center">个人中心</router-link>
       </li>
       <li>
-        <router-link to="/feedback">意见反馈</router-link>
+        <router-link to="/feedback/default">意见反馈</router-link>
       </li>
       <li>
         <router-link to="/problem">常见问题</router-link>

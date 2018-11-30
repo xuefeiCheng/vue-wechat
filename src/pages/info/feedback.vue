@@ -32,6 +32,9 @@ export default {
     XInput,
     XButton
   },
+  created () {
+    console.log(this.$route.params)
+  },
   methods: {
     onChange (val) {
       console.log('val change', val)

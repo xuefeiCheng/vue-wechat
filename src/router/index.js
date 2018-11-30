@@ -52,7 +52,7 @@ const initialRouteMap = [
     component: Bind
   },
   {
-    path: '/feedback',
+    path: '/feedback/:flag',
     name: 'FeedBack',
     meta: {
       requireAuth: false
