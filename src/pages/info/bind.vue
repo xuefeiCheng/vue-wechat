@@ -63,6 +63,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
 @import '~styles/variables.styl'
+.weui-tabbar
+  position fixed !important
 .text-align-l
     text-align left !important
 .info
