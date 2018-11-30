@@ -1,7 +1,7 @@
 <template>
   <div>
     <we-header :WeTitle="title"></we-header>
-    <group title="问题类型选择" label-width="5em">
+    <group :title="groupTitle1" label-width="5em">
       <popup-picker
         :title="pickerTitle"
         :data="list"
@@ -12,23 +12,25 @@
         :placeholder="pickerPH">
       </popup-picker>
     </group>
-    <group title="used with input">
+    <group :title="groupTitle2">
       <x-input :placeholder="inputPH"></x-input>
       <x-textarea :max="200" name="description" :placeholder="textareaPH"></x-textarea>
     </group>
+    <x-button type="primary" class="globalBtn" @click.native="onSubmit">提交</x-button>
   </div>
 </template>
 
 <script>
 import WeHeader from '@/components/Header'
-import { Group, PopupPicker, XTextarea, XInput } from 'vux'
+import { Group, PopupPicker, XTextarea, XInput, XButton } from 'vux'
 export default {
   components: {
     WeHeader,
     Group,
     PopupPicker,
     XTextarea,
-    XInput
+    XInput,
+    XButton
   },
   methods: {
     onChange (val) {
@@ -39,6 +41,9 @@ export default {
     },
     onHide (type) {
       console.log('on hide', type)
+    },
+    onSubmit () {
+      console.log('on submit')
     }
   },
   data () {
@@ -49,6 +54,8 @@ export default {
       inputPH: '请输入您的QQ号或其他联系方式（50字以内）',
       textareaPH: '请在此输入您的意见或建议',
       list: [['意见反馈', '号码申诉', '其他问题']],
+      groupTitle1: '问题类型选择',
+      groupTitle2: '我们会为您细心解答每一个问题',
       value: []
     }
   }
