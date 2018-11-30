@@ -41,8 +41,10 @@ export default {
       console.log('val change', val)
       if (val[0] === '号码申诉') {
         this.appeal = true
+        this.textareaPH = '请在此输入您申诉号码的问题，如：该申诉好吗被误标记为“骚扰电话”'
       } else {
         this.appeal = false
+        this.textareaPH = '请在此输入您的意见或建议'
       }
     },
     onShow () {
@@ -65,6 +67,7 @@ export default {
         case 'appeal':
           this.value = ['号码申诉']
           this.appeal = true
+          this.textareaPH = '请在此输入您申诉号码的问题，如：该申诉好吗被误标记为“骚扰电话”'
           break
         case 'others':
           this.value = ['其他问题']
