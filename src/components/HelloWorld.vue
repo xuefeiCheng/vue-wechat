@@ -3,44 +3,38 @@
   <we-header :WeTitle="title" :isShow='false'></we-header>
   <div class="test">
     <div class="title">菜单选择</div>
-    <ul>
-      <li>
-        <router-link to="/agree">免责声明</router-link>
-      </li>
-      <li>
-        <router-link to="/center">个人中心</router-link>
-      </li>
-      <li>
-        <router-link to="/feedback/suggest">意见反馈</router-link>
-      </li>
-      <li>
-        <router-link to="/feedback/appeal">号码申诉</router-link>
-      </li>
-      <li>
-        <router-link to="/feedback/others">其他问题</router-link>
-      </li>
-      <li>
-        <router-link to="/feedback/default">默认界面</router-link>
-      </li>
-      <li>
-        <router-link to="/problem">常见问题</router-link>
-      </li>
-      <li>
-        <router-link to="/test">测试界面</router-link>
-      </li>
-      <li>
-        <router-link to="/black/list">黑名单管理</router-link>
-      </li>
-      <li>
-        <router-link to="/white/list">白名单管理</router-link>
-      </li>
-      <li>
-        <router-link to="/classify/list">拦截分类设置</router-link>
-      </li>
-      <li>
-        <router-link to="/classify/search">拦截记录查询</router-link>
-      </li>
-    </ul>
+      <ul>
+        <li>
+          <router-link to="/agree">免责声明</router-link>
+        </li>
+        <li>
+          <router-link to="/center">个人中心</router-link>
+        </li>
+        <li>
+          <router-link to="/feedback/suggest">意见反馈</router-link>
+        </li>
+        <li>
+          <router-link to="/introduce">绿盾介绍</router-link>
+        </li>
+        <li>
+          <router-link to="/problem">常见问题</router-link>
+        </li>
+        <li>
+          <router-link to="/test">测试界面</router-link>
+        </li>
+        <li>
+          <router-link to="/black/list">黑名单管理</router-link>
+        </li>
+        <li>
+          <router-link to="/white/list">白名单管理</router-link>
+        </li>
+        <li>
+          <router-link to="/classify/list">拦截分类设置</router-link>
+        </li>
+        <li>
+          <router-link to="/classify/search">拦截记录查询</router-link>
+        </li>
+      </ul>
   </div>
 </div>
 </template>
@@ -63,8 +57,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 div.test {
-  height: 3rem;
-  padding: 4rem 0;
+  padding: 1rem 0;
   /* background-color: #42b983; */
   font-size: 12px;
 }

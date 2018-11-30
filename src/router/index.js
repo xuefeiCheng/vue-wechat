@@ -7,6 +7,7 @@ import Bind from '@/pages/info/bind'
 import Center from '@/pages/info/center'
 import FeedBack from '@/pages/info/feedback'
 import Problem from '@/pages/info/problem'
+import Introduce from '@/pages/info/introduce'
 
 Vue.use(Router)
 
@@ -58,6 +59,14 @@ const initialRouteMap = [
       requireAuth: false
     },
     component: FeedBack
+  },
+  {
+    path: '/introduce',
+    name: 'Introduce',
+    meta: {
+      requireAuth: false
+    },
+    component: Introduce
   },
   {
     path: '/problem',
