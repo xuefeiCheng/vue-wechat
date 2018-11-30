@@ -14,6 +14,9 @@
         <router-link to="/feedback">意见反馈</router-link>
       </li>
       <li>
+        <router-link to="/problem">常见问题</router-link>
+      </li>
+      <li>
         <router-link to="/test">测试界面</router-link>
       </li>
       <li>
