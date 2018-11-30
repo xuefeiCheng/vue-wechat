@@ -21,6 +21,21 @@
   margin-top: 1em !important;
   width: 80vw !important;
 }
+.padding10 {
+  padding: 10px;
+}
+.padding-noBottom {
+  padding-bottom: 0;
+}
+.strong {
+  font-weight: bold;
+}
+.colorRed {
+  color: red;
+}
+.colorGreen {
+  color: green;
+}
 /* 右箭头 */
 .jiantou {
   margin-right: 12px;
