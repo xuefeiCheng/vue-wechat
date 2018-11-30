@@ -5,10 +5,10 @@
       <div class="person">
         <div class="per-middle"><i class="BigSize iconfont icon-duorenhuiyi font-color-FFF"></i></div>
       </div>
-      <div class="personNum">17615839470</div>
+      <div class="personNum">{{personNum}}</div>
     </div>
     <group title="通知提醒">
-      <radio :options="radio001" value="001" @on-change="change"></radio>
+      <radio :options="radioList" value="001" @on-change="change"></radio>
     </group>
   </div>
 </template>
@@ -25,7 +25,8 @@ export default {
   data () {
     return {
       title: '个人中心',
-      radio001: [{
+      personNum: '17615895410',
+      radioList: [{
         icon: '/static/img/black/addblack_400.png',
         key: '001',
         value: '不通知'
