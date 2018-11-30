@@ -5,6 +5,7 @@ import Test from '@/pages/black/list'
 import Agree from '@/pages/info/agree'
 import Bind from '@/pages/info/bind'
 import Center from '@/pages/info/center'
+import FeedBack from '@/pages/info/feedback'
 
 Vue.use(Router)
 
@@ -48,6 +49,14 @@ const initialRouteMap = [
       requireAuth: false
     },
     component: Bind
+  },
+  {
+    path: '/feedback',
+    name: 'FeedBack',
+    meta: {
+      requireAuth: false
+    },
+    component: FeedBack
   },
   {
     path: '/black/list',
