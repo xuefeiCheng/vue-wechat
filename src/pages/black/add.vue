@@ -6,7 +6,7 @@
         <div class="top-row input-group">
           <input class="qh form-control" placeholder="区号"/>
           <input class="phone form-control border-noRedius-r" ref="phone" placeholder="手机或固话号" />
-          <div class='lxr border-radius-12 border-noRedius-l'><i class="iconfont icon-lianxiren font-size-30 font-color-FFF"></i></div>
+          <div class='lxr border-radius-12 border-noRedius-l' @click="showLianxiren"><i class="iconfont icon-lianxiren font-size-30 font-color-FFF"></i></div>
         </div>
       </div>
       <div class="box-info">手机无需区号，添加后，黑名单中的号码来电会被直接拦截</div>
@@ -24,21 +24,43 @@
         <x-button type="default" class="globalBtn" link="/black/list">黑名单列表</x-button>
       </div>
     </div>
+    <div v-transfer-dom class="checklist">
+      <confirm v-model="show"
+      title="呼叫记录"
+      @on-cancel="onCancel"
+      @on-confirm="onConfirm"
+      @on-show="onShow"
+      @on-hide="onHide">
+        <checklist :options="inlineDescList" v-model="inlineDescListValue" :max="1" @on-change="change"></checklist>
+      </confirm>
+    </div>
   </div>
 </template>
 
 <script>
 import WeHeader from '@/components/Header'
-import { XButton } from 'vux'
+import { XButton, Confirm, TransferDomDirective as TransferDom, Checklist } from 'vux'
 export default {
   name: 'addBlack',
+  directives: {
+    TransferDom
+  },
   components: {
     WeHeader,
-    XButton
+    XButton,
+    Confirm,
+    Checklist
   },
   data () {
     return {
       title: '新增黑名单',
+      show: false,
+      inlineDescList: [
+        {key: '1', value: '15715262025', inlineDesc: '2018/11/31 15:45:37'},
+        {key: '2', value: '14715486282', inlineDesc: '2018/11/31 15:45:37'},
+        {key: '3', value: '16515823952', inlineDesc: '2018/11/31 15:45:37'}
+      ],
+      inlineDescListValue: [],
       imgList: [
         [{
           value: '1',
@@ -109,6 +131,28 @@ export default {
     setFoucs () {
       // 若没有数据 设置焦点到 手机号或区号
       this.$refs.phone.focus()
+    },
+    showLianxiren () {
+      this.show = true
+      this.inlineDescListValue = []
+    },
+    onCancel () {
+      console.log('on cancel')
+    },
+    onConfirm (msg) {
+      console.log('on confirm')
+      if (msg) {
+        alert(msg)
+      }
+    },
+    onHide () {
+      console.log('on hide')
+    },
+    onShow () {
+      console.log('on show')
+    },
+    change (val, label) {
+      console.log('change', val, label)
     }
   }
 }
@@ -117,6 +161,20 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
 @import '~styles/variables.styl'
+.checklist >>> .weui-dialog__bd {
+  height: 144px;
+  overflow-y: auto;
+}
+.checklist >>> .weui-cell {
+  padding: 0;
+}
+.checklist >>> .weui-cell__bd {
+  text-align: left;
+  color: #666;
+}
+.checklist >>> .vux-label-desc {
+  color: #999;
+}
 .add-box
   width 100vw
   height 100vh
