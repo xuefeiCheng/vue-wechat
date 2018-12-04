@@ -26,7 +26,7 @@
         <x-icon type="ios-minus-outline" class="cell-x-icon" @click="onDeleteItem"></x-icon>
         <span slot="title">
           <span style="vertical-align:middle;">{{item.phone}}</span>
-          <badge :text="item.badge"></badge>
+          <badge :text="item.badge" :class="badge"></badge>
         </span>
       </cell>
     </group>
@@ -57,6 +57,10 @@ import { Search, Group, Cell, XButton, Badge, Swipeout, SwipeoutItem, SwipeoutBu
 export default {
   name: 'ListView',
   props: {
+    badge: {
+      type: String,
+      default: 'vux-badge-1'
+    },
     title: {
       type: String,
       default: '黑名单列表'
@@ -166,8 +170,10 @@ function getResult (val) {
   position: relative !important;
   top: 0 !important;
 }
-.vux-x-icon {
-  fill: #F70968;
-  fill: #f74c31;
+.vux-badge-1 {
+  background: #f74c31;
+}
+.vux-badge-2 {
+  background: #008000;
 }
 </style>
