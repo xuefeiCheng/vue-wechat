@@ -5,12 +5,10 @@
 </template>
 
 <script>
-import WeHeader from '@/components/Header'
 import ListView from '@/components/listView/list.vue'
 
 export default {
   components: {
-    WeHeader,
     ListView
   },
   created () {},
