@@ -6,7 +6,7 @@
       <div class='iconfont back-icon'>&#xe624;</div>
     </router-link>
   </div> -->
-  <x-header :title="WeTitle" slot="header"></x-header>
+  <x-header :title="WeTitle" slot="header" :left-options="leftOptions"></x-header>
 </template>
 
 <script>
@@ -23,6 +23,14 @@ export default {
     isShow: {
       type: Boolean,
       default: true
+    },
+    leftOptions: {
+      type: Object,
+      default () {
+        return {
+          showBack: true
+        }
+      }
     }
   }
 }
