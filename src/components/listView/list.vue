@@ -46,7 +46,7 @@
       </swipeout-item>
     </swipeout>
     <actionsheet v-model="show" :menus="menus" @on-click-menu="click" @on-click-menu-delete="onDelete" show-cancel></actionsheet>
-    <toast v-model="showSuccess">删除成功</toast>
+    <toast v-model="delSuccess">删除成功</toast>
   </div>
 </template>
 
@@ -114,7 +114,7 @@ export default {
         'title.noop': '确定咩?<br/><span style="color:#666;font-size:12px;">删除后就无法撤消了哦</span>',
         delete: '<span style="color:red">删除</span>'
       },
-      showSuccess: false
+      delSuccess: false
     }
   },
   methods: {
@@ -133,7 +133,7 @@ export default {
     },
     DeleSuccess () {
       console.log('删除成功')
-      this.showSuccess = true
+      this.delSuccess = true
     },
     resultClick (item) {
       window.alert('you click the result item: ' + JSON.stringify(item))
