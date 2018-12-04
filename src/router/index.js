@@ -28,7 +28,8 @@ const initialRouteMap = [
       requireAuth: false
     },
     component: Test
-  },{
+  },
+  {
     path: '/listtest',
     name: 'listTest',
     meta: {

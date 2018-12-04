@@ -11,26 +11,22 @@
     @on-cancel="onCancel"
     @on-submit="onSubmit"
     ref="search"></search>
-    <router-link to="/black/add">
+    <router-link :to="linkObj.url">
       <group>
-        <cell title="添加黑名单" class="weui-cells-top0">
+        <cell :title="linkObj.title" class="weui-cells-top0">
           <i class="iconfont icon-plus1-copy font-size-17" slot="icon"></i>
         </cell>
       </group>
     </router-link>
     <group>
-      <cell inline-desc='2018/11/22 15:27:40'>
+      <cell
+        v-for="item in this.data"
+        :key="item"
+        :inline-desc='item.desc'>
         <x-icon type="ios-minus-outline" class="cell-x-icon" @click="onDeleteItem"></x-icon>
         <span slot="title">
-          <span style="vertical-align:middle;">7615248952</span>
-          <badge text="教育培训"></badge>
-        </span>
-      </cell>
-      <cell inline-desc='2018/11/22 15:27:40'>
-        <x-icon type="ios-minus-outline" class="cell-x-icon"></x-icon>
-        <span slot="title">
-          <span style="vertical-align:middle;">17615864102</span>
-          <badge text="教育培训"></badge>
+          <span style="vertical-align:middle;">{{item.phone}}</span>
+          <badge :text="item.badge"></badge>
         </span>
       </cell>
     </group>
@@ -59,7 +55,36 @@ import WeHeader from '@/components/Header'
 import { Search, Group, Cell, XButton, Badge, Swipeout, SwipeoutItem, SwipeoutButton, Actionsheet, Toast } from 'vux'
 
 export default {
-  name: 'agree',
+  name: 'ListView',
+  props: {
+    title: {
+      type: String,
+      default: '黑名单列表'
+    },
+    linkObj: {
+      type: Object,
+      default () {
+        return {
+          title: '新增黑名单',
+          url: '/black/add'
+        }
+      }
+    },
+    data: {
+      type: Array,
+      default: function () {
+        return [{
+          phone: '17615864102',
+          badge: '教育培训',
+          desc: '2018/11/22 15:27:40'
+        }, {
+          phone: '17615864992',
+          badge: '快递送餐',
+          desc: '2018/11/22 15:27:40'
+        }]
+      }
+    }
+  },
   components: {
     WeHeader,
     Search,
@@ -75,7 +100,6 @@ export default {
   },
   data () {
     return {
-      title: '黑名单列表',
       results: [],
       value: '',
       show: false,
