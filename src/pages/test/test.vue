@@ -20,6 +20,15 @@
         @pullingDown="onPullingDown"
         @pullingUp="onPullingUp"
       >
+        <group>
+          <cell inline-desc='2018/11/22 15:27:40'>
+            <x-icon type="ios-minus-outline" class="cell-x-icon" @click="onDeleteItem"></x-icon>
+            <span slot="title">
+              <span style="vertical-align:middle;">7615248952</span>
+              <badge text="教育培训"></badge>
+            </span>
+          </cell>
+        </group>
       </scroll>
     </div>
   </div>
@@ -29,7 +38,7 @@
 import WeHeader from '@/components/Header'
 import Scroll from '@/components/scroll/scroll.vue'
 import mock from '@/common/js/chinese.js'
-import { Swipeout, SwipeoutItem, SwipeoutButton, XButton } from 'vux'
+import { Swipeout, SwipeoutItem, SwipeoutButton, XButton, Group, Cell, Badge } from 'vux'
 
 export default {
   components: {
@@ -38,7 +47,10 @@ export default {
     SwipeoutItem,
     SwipeoutButton,
     XButton,
-    Scroll
+    Scroll,
+    Group,
+    Cell,
+    Badge
   },
   created () {
     for (let i = 0; i < 2; i++) {
@@ -56,6 +68,10 @@ export default {
     },
     handleEvents (type) {
       console.log('event: ', type)
+    },
+    onDeleteItem () {
+      this.show = true
+      console.log('on delete')
     },
     onPullingDown () {
       // 模拟更新数据
@@ -134,7 +150,7 @@ export default {
 }
 .scroll-list-wrap{
   position: relative;
-  height: 6rem;
+  height: 10rem;
   border: 1px solid rgba(0, 0, 0, .1);
   border-radius: 3px;
   transform: rotate(0deg);
