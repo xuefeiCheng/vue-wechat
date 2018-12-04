@@ -20,8 +20,8 @@
     </router-link>
     <group>
       <cell
-        v-for="item in this.data"
-        :key="item"
+        v-for="(item, index) in this.data"
+        :key="index"
         :inline-desc='item.desc'>
         <x-icon type="ios-minus-outline" class="cell-x-icon" @click="onDeleteItem"></x-icon>
         <span slot="title">
@@ -119,6 +119,7 @@ export default {
       console.log(key)
     },
     onDelete () {
+      this.$emit('testDelete')
       this.showSuccess = true
     },
     resultClick (item) {
