@@ -1,6 +1,6 @@
 <template>
   <div>
-    <list-view @testDelete="testDelete"></list-view>
+    <list-view @testDelete="testDelete" ref="test"></list-view>
   </div>
 </template>
 
@@ -14,8 +14,9 @@ export default {
   created () {},
   computed: {},
   methods: {
-    testDelete (type) {
-      console.log('on test组件的Delete事件')
+    testDelete (delId) {
+      console.log('on test组件的Delete事件,删除的是：' + delId)
+      this.$refs.test.DeleSuccess()
     }
   },
   data () {

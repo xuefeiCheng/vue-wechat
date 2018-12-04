@@ -20,10 +20,10 @@
     </router-link>
     <group>
       <cell
-        v-for="(item, index) in this.data"
-        :key="index"
+        v-for="item in this.data"
+        :key="item.id"
         :inline-desc='item.desc'>
-        <x-icon type="ios-minus-outline" class="cell-x-icon" @click="onDeleteItem"></x-icon>
+        <x-icon type="ios-minus-outline" class="cell-x-icon" @click="onDeleteItem(item.id)"></x-icon>
         <span slot="title">
           <span style="vertical-align:middle;">{{item.phone}}</span>
           <badge :text="item.badge" :class="badge"></badge>
@@ -78,10 +78,12 @@ export default {
       type: Array,
       default: function () {
         return [{
+          id: '1',
           phone: '17615864102',
           badge: '教育培训',
           desc: '2018/11/22 15:27:40'
         }, {
+          id: '2',
           phone: '17615864992',
           badge: '快递送餐',
           desc: '2018/11/22 15:27:40'
@@ -104,6 +106,7 @@ export default {
   },
   data () {
     return {
+      delId: '',
       results: [],
       value: '',
       show: false,
@@ -118,8 +121,18 @@ export default {
     click (key) {
       console.log(key)
     },
+    onDeleteItem (delId) {
+      // 点击删除按钮后，删除提示框出现，删除id绑定
+      this.show = true
+      this.delId = delId
+      console.log('on delete')
+    },
     onDelete () {
-      this.$emit('testDelete')
+      // 用户点击 删除按钮 提交给父组件 处理
+      this.$emit('testDelete', this.delId)
+    },
+    DeleSuccess () {
+      console.log('删除成功')
       this.showSuccess = true
     },
     resultClick (item) {
@@ -142,10 +155,6 @@ export default {
     },
     onCancel () {
       console.log('on cancel')
-    },
-    onDeleteItem () {
-      this.show = true
-      console.log('on delete')
     },
     onButtonClick (type) {
       alert('on button click ' + type)
