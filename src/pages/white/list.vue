@@ -15,7 +15,7 @@
 
 <script>
 import ListView from '@/components/listView/list.vue'
-
+import { ArrDel } from '@/common/js/handleData.js'
 export default {
   components: {
     ListView
@@ -27,11 +27,8 @@ export default {
       console.log('on test组件的Delete事件,删除的是：' + delId)
       this.$refs.test.DeleSuccess()
       // 数据假删除
-      this.data.forEach((item, index, arr) => {
-        if (parseInt(item.id) === parseInt(delId)) {
-          arr.splice(index, 1)
-        }
-        this.data = arr
+      ArrDel(this.data, (obj) => {
+        return obj.id === delId
       })
     },
     onPullingDown () {
