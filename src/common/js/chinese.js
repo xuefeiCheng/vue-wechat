@@ -58,7 +58,8 @@ export default {
   scrollComponent: {
     defaultLoadTxtMore: '加载更多',
     defaultLoadTxtNoMore: '没有更多数据了',
-    defaultRefreshTxt: '刷新成功'
+    defaultRefreshTxt: '刷新成功',
+    defaultScrollHeightForSub: 180
   },
 
   indexListPage: {
