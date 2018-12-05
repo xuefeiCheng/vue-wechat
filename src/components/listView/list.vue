@@ -33,7 +33,7 @@
         @pullingDown="onPullingDown"
         @pullingUp="onPullingUp"
       >
-        <group>
+        <group class="weui-cells-top0">
           <cell
             v-for="item in dataList"
             :key="item.id"
@@ -251,5 +251,10 @@ function getResult (val) {
   margin-top: 1.17647059em;
   transform: rotate(0deg);
   // overflow: hidden;
+}
+</style>
+<style scoped lang="stylus">
+.weui-cells-top0 >>> .vux-no-group-title {
+  margin-top 0px
 }
 </style>
