@@ -26,6 +26,13 @@ export default {
     testDelete (delId) {
       console.log('on test组件的Delete事件,删除的是：' + delId)
       this.$refs.test.DeleSuccess()
+      // 数据假删除
+      this.data.forEach((item, index, arr) => {
+        if (parseInt(item.id) === parseInt(delId)) {
+          arr.splice(index, 1)
+        }
+        this.data = arr
+      })
     },
     onPullingDown () {
       // 模拟更新数据
@@ -83,25 +90,31 @@ export default {
     return {
       data: [
         {
+          id: '0',
+          phone: '17615864992',
+          badge: '快递送餐0',
+          desc: '2018/11/22 15:27:40'
+        },
+        {
           id: '1',
           phone: '17615864102',
-          badge: '教育培训',
+          badge: '教育培训1',
           desc: '2018/11/22 15:27:40'
         }, {
           id: '2',
           phone: '17615864992',
-          badge: '快递送餐',
+          badge: '快递送餐2',
           desc: '2018/11/22 15:27:40'
         },
         {
           id: '3',
           phone: '17615864102',
-          badge: '教育培训',
+          badge: '教育培训3',
           desc: '2018/11/22 15:27:40'
         }, {
           id: '4',
           phone: '17615864992',
-          badge: '快递送餐',
+          badge: '快递送餐4',
           desc: '2018/11/22 15:27:40'
         },
         {
@@ -131,11 +144,6 @@ export default {
           phone: '17615864102',
           badge: '教育培训',
           desc: '2018/11/22 15:27:40'
-        }, {
-          id: '10',
-          phone: '17615864992',
-          badge: '快递送餐',
-          desc: '2018/11/22 15:27:40'
         }
       ],
       title: '白名单列表',
@@ -144,7 +152,7 @@ export default {
         title: '新增白名单',
         url: '/white/add'
       },
-      itemIndex: 10
+      itemIndex: 9
     }
   }
 }
