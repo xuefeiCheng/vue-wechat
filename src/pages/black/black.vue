@@ -1,7 +1,6 @@
 <template>
   <div>
     <list-view
-    :title="title"
     :dataList="data"
     @testDelete="testDelete"
     @onPullingDown="onPullingDown"
@@ -136,8 +135,7 @@ export default {
           desc: '2018/11/22 15:27:40'
         }
       ],
-      itemIndex: 10,
-      title: '黑名单列表'
+      itemIndex: 10
     }
   }
 }
