@@ -33,7 +33,7 @@
         </group>
         <group>
           <cell title="拦截阈值" link="/classify/set" inline-desc="被标记超过一定次数时拦截">
-            <span slot="value" class="font-size-12">50次（建议值）</span>
+            <span class="font-size-12">50次（建议值）</span>
           </cell>
         </group>
       </div>
