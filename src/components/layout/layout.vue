@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import WeHeader from '@/components/Header'
+import WeHeader from './Header'
 export default {
   components: {
     WeHeader
