@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import ListViewTest from '@/pages/test/listViewTest'
-import LayOutTest from '@/pages/test/LayOut'
+import LayOut from '@/pages/test/LayOut'
 import Agree from '@/pages/info/agree'
 import Bind from '@/pages/info/bind'
 import Center from '@/pages/info/center'
@@ -22,28 +22,36 @@ const initialRouteMap = [
     component: HelloWorld
   },
   {
+    path: '/black',
+    redirect: '/black/list',
+    name: '黑名单设置',
+    component: LayOut,
+    children: [
+      {
+        path: 'list',
+        name: '黑名单列表',
+        meta: {
+          requireAuth: true
+        },
+        component: () => import('@/pages/black/black')
+      },
+      {
+        path: 'add',
+        name: '新增黑名单',
+        meta: {
+          requireAuth: true
+        },
+        component: () => import('@/pages/black/add')
+      }
+    ]
+  },
+  {
     path: '/test01',
     name: 'ListViewTest',
     meta: {
       requireAuth: false
     },
     component: ListViewTest
-  },
-  {
-    path: '/test02',
-    redirect: '/test02/blacklist',
-    name: 'LayOutTest',
-    component: LayOutTest,
-    children: [
-      {
-        path: 'blacklist',
-        name: '黑名单列表',
-        meta: {
-          requireAuth: true
-        },
-        component: () => import('@/pages/black/black')
-      }
-    ]
   },
   {
     path: '/agree',
