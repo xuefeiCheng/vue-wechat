@@ -21,6 +21,11 @@ export default {
         showBack: false
       }
     }
+  },
+  watch: {
+    title () {
+      return this.$router.history.current.name || '标题'
+    }
   }
 }
 </script>
