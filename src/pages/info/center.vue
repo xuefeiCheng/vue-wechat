@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="center">
+    <div class="center" :style="{background:centerBg}">
       <div class="person">
         <div class="per-middle"><i class="BigSize iconfont icon-duorenhuiyi font-color-FFF"></i></div>
       </div>
@@ -22,6 +22,7 @@ export default {
   data () {
     return {
       personNum: '17615895410',
+      centerBg: 'url("static/img/info/my_bg.png") no-repeat center center',
       radioList: [{
         icon: 'static/img/black/addblack_400.png',
         key: '001',
@@ -48,7 +49,6 @@ export default {
 <style scoped lang="stylus">
 .center
   height 9rem
-  background url(/static/img/info/my_bg.png) no-repeat center center
   background-size cover
   .person
     box-sizing border-box

@@ -8,7 +8,7 @@
         </div>
         <div class="top-row">
           <div class="row-left">
-            <div class="classifyIcon" :class="classifyState.class"></div>
+            <div class="classifyIcon" :style="{background: classifyState.bg}"></div>
           </div>
           <div class='row-right'>
             <div class="classifyCon font-color-FFF font-size-17">
@@ -46,12 +46,12 @@ const classify = {
   true: {
     stateMsg: '骚扰拦截已开启',
     btnMsg: '关闭拦截',
-    class: 'bgOne'
+    bg: 'url("static/img/classify/classify_icon_on.png") no-repeat center center'
   },
   false: {
     stateMsg: '骚扰拦截已关闭',
     btnMsg: '开启拦截',
-    class: 'bgTwo'
+    bg: 'url("static/img/classify/classify_icon_off.png") no-repeat center center'
   }
 }
 export default {
@@ -85,10 +85,6 @@ export default {
 .weui-cells-top0 >>> .vux-no-group-title {
   margin-top 2px
 }
-.bgOne
-  background url('/static/img/classify/classify_icon_on.png') no-repeat center center
-.bgTwo
-  background url('/static/img/classify/classify_icon_off.png') no-repeat center center
 .add-box
   width 100vw
   height 100vh
@@ -105,7 +101,8 @@ export default {
       .row-left
         flex 0 0 20%
         .classifyIcon
-          background-size auto 70%
+          background url("/static/img/classify/classify_icon_off.png")
+          background-size auto 70% !important
           display block
           width 3rem
           height 3rem
