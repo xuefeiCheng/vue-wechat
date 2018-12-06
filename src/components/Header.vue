@@ -6,7 +6,13 @@
       <div class='iconfont back-icon'>&#xe624;</div>
     </router-link>
   </div> -->
-  <x-header :title="WeTitle" slot="header" :left-options="leftOptions"></x-header>
+  <x-header
+  :title="WeTitle"
+  slot="header"
+  :left-options="leftOptions"
+  :right-options="rightOptions"
+  @on-click-back="onClickBack">
+  </x-header>
 </template>
 
 <script>
@@ -28,9 +34,21 @@ export default {
       type: Object,
       default () {
         return {
-          showBack: true
+          showBack: true,
+          preventGoBack: false
         }
       }
+    },
+    rightOptions: {
+      type: Object,
+      default () {
+        return {
+          showMore: false
+        }
+      }
+    },
+    onClickBack: {
+      type: Function
     }
   }
 }
