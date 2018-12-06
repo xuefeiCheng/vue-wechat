@@ -17,7 +17,9 @@ export default {
   components: {
     ListView
   },
-  created () {},
+  mounted () {
+    this.$refs.test.forceUpdate()
+  },
   computed: {},
   methods: {
     testDelete (delId) {

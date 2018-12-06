@@ -208,6 +208,9 @@ export default {
         this.rebuildScroll()
       },
       deep: true
+    },
+    data () {
+      this.$refs.scroll.forceUpdate()
     }
   }
 }
