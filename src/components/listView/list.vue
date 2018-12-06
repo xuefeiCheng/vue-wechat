@@ -230,6 +230,10 @@ function getResult (val) {
   position: relative !important;
   top: 0 !important;
 }
+.vux-x-icon {
+  fill: #F70968;
+  fill: #f74c31;
+}
 .vux-badge-1 {
   background: #f74c31;
 }
