@@ -23,15 +23,15 @@ export default {
     return {
       personNum: '17615895410',
       radioList: [{
-        icon: '/static/img/black/addblack_400.png',
+        icon: 'static/img/black/addblack_400.png',
         key: '001',
         value: '不通知'
       }, {
-        icon: '/static/img/black/addblack_400.png',
+        icon: 'static/img/black/addblack_400.png',
         key: '002',
         value: '短信拦截通知'
       }, {
-        icon: '/static/img/black/addblack_400.png',
+        icon: 'static/img/black/addblack_400.png',
         key: '003',
         value: '微信拦截通知'
       }]

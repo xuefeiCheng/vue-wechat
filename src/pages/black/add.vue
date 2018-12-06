@@ -61,49 +61,49 @@ export default {
         [{
           value: '1',
           state: false,
-          src: ['/static/img/black/addblack_swindle.png', '/static/img/black/addblack_swindle_press.png'],
+          src: ['static/img/black/addblack_swindle.png', 'static/img/black/addblack_swindle_press.png'],
           title: '诈骗电话'
         },
         {
           value: '2',
           state: false,
-          src: ['/static/img/black/addblack_harass.png', '/static/img/black/addblack_harass_press.png'],
+          src: ['static/img/black/addblack_harass.png', 'static/img/black/addblack_harass_press.png'],
           title: '恶意骚扰'
         },
         {
           value: '3',
           state: false,
-          src: ['/static/img/black/addblack_medi.png', '/static/img/black/addblack_medi_press.png'],
+          src: ['static/img/black/addblack_medi.png', 'static/img/black/addblack_medi_press.png'],
           title: '房产中介'
         },
         {
           value: '4',
           state: false,
-          src: ['/static/img/black/addblack_ad.png', '/static/img/black/addblack_ad_press.png'],
+          src: ['static/img/black/addblack_ad.png', 'static/img/black/addblack_ad_press.png'],
           title: '广告推销'
         }],
         [{
           value: '5',
           state: false,
-          src: ['/static/img/black/addblack_promote.png', '/static/img/black/addblack_promote_press.png'],
+          src: ['static/img/black/addblack_promote.png', 'static/img/black/addblack_promote_press.png'],
           title: '保险理财'
         },
         {
           value: '6',
           state: false,
-          src: ['/static/img/black/addblack_edu.png', '/static/img/black/addblack_edu_press.png'],
+          src: ['static/img/black/addblack_edu.png', 'static/img/black/addblack_edu_press.png'],
           title: '教育培训'
         },
         {
           value: '7',
           state: false,
-          src: ['/static/img/black/addblack_express.png', '/static/img/black/addblack_express_press.png'],
+          src: ['static/img/black/addblack_express.png', 'static/img/black/addblack_express_press.png'],
           title: '快递送餐'
         },
         {
           value: '8',
           state: false,
-          src: ['/static/img/black/addblack_other.png', '/static/img/black/addblack_other_press.png'],
+          src: ['static/img/black/addblack_other.png', 'static/img/black/addblack_other_press.png'],
           title: '其他'
         }]
       ]
