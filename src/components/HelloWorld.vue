@@ -21,6 +21,10 @@
         </li>
         <li>
           <router-link to="/test01">ListView测试</router-link>
+        </li>
+        <li>
+          <router-link to="/test02">LayOut测试</router-link>
+        </li>
         <li>
           <router-link to="/black/list">黑名单管理</router-link>
         </li>

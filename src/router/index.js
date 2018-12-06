@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import ListViewTest from '@/pages/test/listViewTest'
+import LayOutTest from '@/pages/test/LayOut'
 import Agree from '@/pages/info/agree'
 import Bind from '@/pages/info/bind'
 import Center from '@/pages/info/center'
@@ -27,6 +28,14 @@ const initialRouteMap = [
       requireAuth: false
     },
     component: ListViewTest
+  },
+  {
+    path: '/test02',
+    name: 'LayOutTest',
+    meta: {
+      requireAuth: false
+    },
+    component: LayOutTest
   },
   {
     path: '/agree',
