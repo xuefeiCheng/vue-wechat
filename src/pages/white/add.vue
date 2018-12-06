@@ -1,6 +1,5 @@
 <template>
   <div>
-    <we-header :WeTitle="title"></we-header>
     <div class="add-box">
       <div class="box-top">
         <div class="top-row input-group">
@@ -32,7 +31,6 @@
 </template>
 
 <script>
-import WeHeader from '@/components/Header'
 import { XButton, Confirm, TransferDomDirective as TransferDom, Checklist } from 'vux'
 export default {
   name: 'addWhite',
@@ -40,14 +38,12 @@ export default {
     TransferDom
   },
   components: {
-    WeHeader,
     XButton,
     Confirm,
     Checklist
   },
   data () {
     return {
-      title: '新增白名单',
       show: false,
       inlineDescList: [
         {key: '1', value: '15715262025', inlineDesc: '2018/11/31 15:45:37'},

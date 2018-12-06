@@ -1,7 +1,6 @@
 <template>
   <div>
     <list-view
-    :title="title"
     :dataList="data"
     :badge="badge"
     :linkObj="linkObj"
@@ -143,7 +142,6 @@ export default {
           desc: '2018/11/22 15:27:40'
         }
       ],
-      title: '白名单列表',
       badge: 'vux-badge-2',
       linkObj: {
         title: '新增白名单',
