@@ -1,6 +1,5 @@
 <template>
   <div>
-    <we-header :WeTitle="title"></we-header>
     <div class="add-box">
       <div class="box-top">
         <div class="box-info">
@@ -20,18 +19,15 @@
 </template>
 
 <script>
-import WeHeader from '@/components/Header'
 import { XSwitch, Group, Cell } from 'vux'
 export default {
   components: {
-    WeHeader,
     XSwitch,
     Group,
     Cell
   },
   data () {
     return {
-      title: '拦截记录查询',
       num: 0
     }
   }

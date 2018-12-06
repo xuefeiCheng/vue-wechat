@@ -1,6 +1,5 @@
 <template>
   <div>
-    <we-header :WeTitle="title"></we-header>
     <div class="add-box">
       <group class="weui-cells-top0">
         <cell
@@ -32,21 +31,18 @@
 </template>
 
 <script>
-import WeHeader from '@/components/Header'
 import { Group, Cell, TransferDomDirective as TransferDom, Confirm } from 'vux'
 export default {
   directives: {
     TransferDom
   },
   components: {
-    WeHeader,
     Group,
     Cell,
     Confirm
   },
   data () {
     return {
-      title: '拦截阈值设置',
       show: false,
       ljValue: 200,
       cellList: [{

@@ -70,6 +70,38 @@ const initialRouteMap = [
     ]
   },
   {
+    path: '/classify',
+    redirect: '/classify/list',
+    name: '拦截分类设置',
+    component: LayOut,
+    children: [
+      {
+        path: 'list',
+        name: '拦截分类展示',
+        meta: {
+          requireAuth: true
+        },
+        component: () => import('@/pages/classify/list')
+      },
+      {
+        path: 'set',
+        name: '拦截阈值设置',
+        meta: {
+          requireAuth: true
+        },
+        component: () => import('@/pages/classify/set')
+      },
+      {
+        path: 'search',
+        name: '拦截记录查询',
+        meta: {
+          requireAuth: true
+        },
+        component: () => import('@/pages/classify/search')
+      }
+    ]
+  },
+  {
     path: '/test01',
     name: 'ListViewTest',
     meta: {
@@ -124,30 +156,6 @@ const initialRouteMap = [
       requireAuth: false
     },
     component: Problem
-  },
-  {
-    path: '/classify/list',
-    meta: {
-      requireAuth: true
-    },
-    name: 'ListClassify',
-    component: () => import('@/pages/classify/list')
-  },
-  {
-    path: '/classify/set',
-    meta: {
-      requireAuth: true
-    },
-    name: 'setClassify',
-    component: () => import('@/pages/classify/set')
-  },
-  {
-    path: '/classify/search',
-    meta: {
-      requireAuth: true
-    },
-    name: 'searchClassify',
-    component: () => import('@/pages/classify/search')
   }
 ]
 const router = new Router({

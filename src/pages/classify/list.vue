@@ -1,6 +1,5 @@
 <template>
   <div>
-    <we-header :WeTitle="title"></we-header>
     <div class="add-box">
       <div class="box-top">
         <div class="box-info">
@@ -42,7 +41,6 @@
 </template>
 
 <script>
-import WeHeader from '@/components/Header'
 import { XSwitch, Group, Cell } from 'vux'
 const classify = {
   true: {
@@ -58,14 +56,12 @@ const classify = {
 }
 export default {
   components: {
-    WeHeader,
     XSwitch,
     Group,
     Cell
   },
   data () {
     return {
-      title: '拦截分类设置',
       stateFlag: true,
       classifyState: classify[true],
       value: true
