@@ -68,7 +68,7 @@
 
 <script>
 import Scroll from '@/components/scroll/scroll.vue'
-import mock from '@/common/js/chinese.js'
+import mock from '@/assets/js/chinese.js'
 import { Search, Group, Cell, XButton, Badge, Swipeout, SwipeoutItem, SwipeoutButton, Actionsheet, Toast } from 'vux'
 
 export default {

@@ -37,7 +37,7 @@
 <script>
 import WeHeader from '@/components/layout/Header'
 import Scroll from '@/components/scroll/scroll.vue'
-import mock from '@/common/js/chinese.js'
+import mock from '@/assets/js/chinese.js'
 import { Swipeout, SwipeoutItem, SwipeoutButton, XButton, Group, Cell, Badge } from 'vux'
 
 export default {
