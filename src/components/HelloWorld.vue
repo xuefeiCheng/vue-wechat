@@ -15,7 +15,7 @@
       <div>
         <ul><li class="padding-left0">业务设置</li> </ul>
         <ul>
-          <li><router-link to="/black/list">黑名单管理</router-link></li>
+          <li><router-link to="/black">黑名单管理</router-link></li>
           <li><router-link to="/white/list">白名单管理</router-link></li>
           <li><router-link to="/classify/list">拦截分类设置</router-link></li>
         </ul>
