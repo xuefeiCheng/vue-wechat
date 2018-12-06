@@ -48,8 +48,8 @@
 import BScroll from 'better-scroll'
 import Loading from '../loading/loading.vue'
 import Bubble from '../bubble/bubble.vue'
-import { getRect } from '@/assets/js/dom'
-import mock from '@/assets/js/chinese.js'
+import { getRect } from 'common/js/dom'
+import mock from 'common/js/chinese.js'
 
 const COMPONENT_NAME = 'scroll'
 const DIRECTION_H = 'horizontal'

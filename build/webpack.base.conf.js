@@ -37,7 +37,8 @@ const webpackConfig = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      'styles': resolve('src/assets/styles'),
+      'styles': resolve('src/common/styles'),
+      'common': resolve('src/common')
     }
   },
   module: {
@@ -99,7 +100,7 @@ module.exports = vuxLoader.merge(webpackConfig, {
     },
     {
       name: 'less-theme',
-      path: 'src/assets/styles/theme.less'
+      path: 'src/common/styles/theme.less'
     }
   ]
 })

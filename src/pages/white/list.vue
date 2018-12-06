@@ -14,7 +14,7 @@
 
 <script>
 import ListView from '@/components/listView/list.vue'
-import { ArrDel } from '@/assets/js/handleData.js'
+import { ArrDel } from 'common/js/handleData.js'
 export default {
   components: {
     ListView
