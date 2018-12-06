@@ -1,6 +1,5 @@
 <template>
   <div>
-    <we-header :WeTitle="title"></we-header>
     <div class="padding10 padding-noBottom">
       <span class="strong">一个动作终结电话骚扰</span>
       <p>
@@ -28,18 +27,6 @@
   </div>
 </template>
 
-<script>
-import WeHeader from '@/components/Header'
-export default {
-  components: {
-    WeHeader
-  },
-  data () {
-    return {
-      title: '绿盾介绍'
-    }
-  }
-}
-</script>
+<script></script>
 
 <style scoped lang="stylus"></style>

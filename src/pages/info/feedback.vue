@@ -1,6 +1,5 @@
 <template>
   <div>
-    <we-header :WeTitle="title"></we-header>
     <group :title="groupTitle1" label-width="5em">
       <popup-picker
         :title="pickerTitle"
@@ -22,11 +21,9 @@
 </template>
 
 <script>
-import WeHeader from '@/components/Header'
 import { Group, PopupPicker, XTextarea, XInput, XButton } from 'vux'
 export default {
   components: {
-    WeHeader,
     Group,
     PopupPicker,
     XTextarea,
@@ -79,7 +76,6 @@ export default {
   },
   data () {
     return {
-      title: '意见反馈',
       pickerTitle: '问题类型',
       pickerPH: '请选择',
       inputPH1: '请输入您的QQ号或其他联系方式（50字以内）',

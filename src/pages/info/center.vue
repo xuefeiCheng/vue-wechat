@@ -1,6 +1,5 @@
 <template>
   <div>
-    <we-header :WeTitle="title"></we-header>
     <div class="center">
       <div class="person">
         <div class="per-middle"><i class="BigSize iconfont icon-duorenhuiyi font-color-FFF"></i></div>
@@ -14,17 +13,14 @@
 </template>
 
 <script>
-import WeHeader from '@/components/Header'
 import { Radio, Group } from 'vux'
 export default {
   components: {
-    WeHeader,
     Radio,
     Group
   },
   data () {
     return {
-      title: '个人中心',
       personNum: '17615895410',
       radioList: [{
         icon: '/static/img/black/addblack_400.png',

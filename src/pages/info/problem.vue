@@ -1,6 +1,5 @@
 <template>
   <div>
-    <we-header :WeTitle="title"></we-header>
     <div
       v-for="item in problemList"
       :key="item.id">
@@ -9,25 +8,22 @@
       </group>
     </div>
     <group>
-      <cell title="号码申诉" link="/feedback/appeal"></cell>
+      <cell title="号码申诉" link="/info/feedback/appeal"></cell>
     </group>
   </div>
 </template>
 
 <script>
-import WeHeader from '@/components/Header'
 import SelfCell from '@/components/selfCell'
 import { Group, Cell } from 'vux'
 export default {
   components: {
-    WeHeader,
     SelfCell,
     Group,
     Cell
   },
   data () {
     return {
-      title: '常见问题',
       problemList: [
         {
           id: 1,
