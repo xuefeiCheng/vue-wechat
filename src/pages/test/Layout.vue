@@ -23,8 +23,8 @@ export default {
     }
   },
   watch: {
-    title () {
-      return this.$router.history.current.name || '标题'
+    '$route' (to, from) {
+      this.title = this.$router.history.current.name || '标题'
     }
   }
 }
