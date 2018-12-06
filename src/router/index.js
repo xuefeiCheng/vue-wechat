@@ -46,6 +46,30 @@ const initialRouteMap = [
     ]
   },
   {
+    path: '/white',
+    redirect: '/white/list',
+    name: '白名单设置',
+    component: LayOut,
+    children: [
+      {
+        path: 'list',
+        name: '白名单列表',
+        meta: {
+          requireAuth: true
+        },
+        component: () => import('@/pages/white/list')
+      },
+      {
+        path: 'add',
+        name: '新增白名单',
+        meta: {
+          requireAuth: true
+        },
+        component: () => import('@/pages/white/add')
+      }
+    ]
+  },
+  {
     path: '/test01',
     name: 'ListViewTest',
     meta: {
@@ -100,38 +124,6 @@ const initialRouteMap = [
       requireAuth: false
     },
     component: Problem
-  },
-  {
-    path: '/black/list',
-    name: 'ListBlack',
-    meta: {
-      requireAuth: true
-    },
-    component: () => import('@/pages/black/black')
-  },
-  {
-    path: '/black/add',
-    meta: {
-      requireAuth: true
-    },
-    name: 'AddBlack',
-    component: () => import('@/pages/black/add')
-  },
-  {
-    path: '/white/list',
-    meta: {
-      requireAuth: true
-    },
-    name: 'ListWhite',
-    component: () => import('@/pages/white/list')
-  },
-  {
-    path: '/white/add',
-    meta: {
-      requireAuth: true
-    },
-    name: 'AddWhite',
-    component: () => import('@/pages/white/add')
   },
   {
     path: '/classify/list',
