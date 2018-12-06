@@ -102,6 +102,46 @@ const initialRouteMap = [
     ]
   },
   {
+    path: '/info',
+    redirect: '/info/introduce',
+    name: '我的绿盾',
+    component: LayOut,
+    children: [
+      {
+        path: 'introduce',
+        name: '绿盾介绍',
+        meta: {
+          requireAuth: false
+        },
+        component: Introduce
+      },
+      {
+        path: 'problem',
+        name: '常见问题',
+        meta: {
+          requireAuth: false
+        },
+        component: Problem
+      },
+      {
+        path: 'feedback/:flag',
+        name: '意见反馈',
+        meta: {
+          requireAuth: false
+        },
+        component: FeedBack
+      },
+      {
+        path: 'center',
+        name: '个人中心',
+        meta: {
+          requireAuth: true
+        },
+        component: Center
+      }
+    ]
+  },
+  {
     path: '/test01',
     name: 'ListViewTest',
     meta: {
@@ -118,44 +158,12 @@ const initialRouteMap = [
     component: Agree
   },
   {
-    path: '/center',
-    name: 'Center',
-    meta: {
-      requireAuth: true // 添加该字段，表示进入这个路由是需要验证
-    },
-    component: Center
-  },
-  {
     path: '/bind',
     name: 'Bind',
     meta: {
       requireAuth: false
     },
     component: Bind
-  },
-  {
-    path: '/feedback/:flag',
-    name: 'FeedBack',
-    meta: {
-      requireAuth: false
-    },
-    component: FeedBack
-  },
-  {
-    path: '/introduce',
-    name: 'Introduce',
-    meta: {
-      requireAuth: false
-    },
-    component: Introduce
-  },
-  {
-    path: '/problem',
-    name: 'Problem',
-    meta: {
-      requireAuth: false
-    },
-    component: Problem
   }
 ]
 const router = new Router({

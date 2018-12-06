@@ -6,10 +6,10 @@
       <div>
         <ul><li class="padding-left0">我的绿盾</li> </ul>
         <ul>
-          <li><router-link to="/center">个人中心</router-link></li>
-          <li><router-link to="/introduce">绿盾介绍</router-link></li>
-          <li><router-link to="/feedback/suggest">意见反馈</router-link></li>
-          <li><router-link to="/problem">常见问题</router-link></li>
+          <li><router-link to="/info/center">个人中心</router-link></li>
+          <li><router-link to="/info/introduce">绿盾介绍</router-link></li>
+          <li><router-link to="/info/feedback/suggest">意见反馈</router-link></li>
+          <li><router-link to="/info/problem">常见问题</router-link></li>
         </ul>
       </div>
       <div>
