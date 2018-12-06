@@ -31,11 +31,19 @@ const initialRouteMap = [
   },
   {
     path: '/test02',
+    redirect: '/test02/blacklist',
     name: 'LayOutTest',
-    meta: {
-      requireAuth: false
-    },
-    component: LayOutTest
+    component: LayOutTest,
+    children: [
+      {
+        path: 'blacklist',
+        name: '黑名单列表',
+        meta: {
+          requireAuth: true
+        },
+        component: () => import('@/pages/black/black')
+      }
+    ]
   },
   {
     path: '/agree',
