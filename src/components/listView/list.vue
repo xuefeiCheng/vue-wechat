@@ -1,6 +1,5 @@
 <template>
   <div>
-    <we-header :WeTitle="title"></we-header>
     <search
     v-model="value"
     auto-scroll-to-top
@@ -68,7 +67,6 @@
 </template>
 
 <script>
-import WeHeader from '@/components/Header'
 import Scroll from '@/components/scroll/scroll.vue'
 import mock from '@/common/js/chinese.js'
 import { Search, Group, Cell, XButton, Badge, Swipeout, SwipeoutItem, SwipeoutButton, Actionsheet, Toast } from 'vux'
@@ -82,10 +80,6 @@ export default {
     badge: {
       type: String,
       default: 'vux-badge-1'
-    },
-    title: {
-      type: String,
-      default: '黑名单列表'
     },
     linkObj: {
       type: Object,
@@ -104,7 +98,6 @@ export default {
     }
   },
   components: {
-    WeHeader,
     Search,
     Group,
     Cell,
