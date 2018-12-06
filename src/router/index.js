@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import Test from '@/pages/test/test'
+import ListViewTest from '@/pages/test/listViewTest'
 import Agree from '@/pages/info/agree'
 import Bind from '@/pages/info/bind'
 import Center from '@/pages/info/center'
@@ -21,12 +21,12 @@ const initialRouteMap = [
     component: HelloWorld
   },
   {
-    path: '/test',
-    name: 'test',
+    path: '/test01',
+    name: 'ListViewTest',
     meta: {
       requireAuth: false
     },
-    component: Test
+    component: ListViewTest
   },
   {
     path: '/agree',
