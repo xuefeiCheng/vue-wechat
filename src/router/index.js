@@ -138,6 +138,22 @@ const initialRouteMap = [
           requireAuth: true
         },
         component: Center
+      },
+      {
+        path: 'agree',
+        name: '免责声明',
+        meta: {
+          requireAuth: false
+        },
+        component: Agree
+      },
+      {
+        path: 'bind',
+        name: '号码绑定',
+        meta: {
+          requireAuth: false
+        },
+        component: Bind
       }
     ]
   },
@@ -148,22 +164,6 @@ const initialRouteMap = [
       requireAuth: false
     },
     component: ListViewTest
-  },
-  {
-    path: '/agree',
-    name: 'Agree',
-    meta: {
-      requireAuth: false // 添加该字段，表示进入这个路由是需要验证
-    },
-    component: Agree
-  },
-  {
-    path: '/bind',
-    name: 'Bind',
-    meta: {
-      requireAuth: false
-    },
-    component: Bind
   }
 ]
 const router = new Router({
@@ -177,7 +177,7 @@ router.beforeEach((to, from, next) => {
     if (hasUser === null || hasUser === 'null') {
       console.log('没有注册')
       sessionStorage.setItem('targetPath', to.fullPath)
-      next('/agree')
+      next('/info/agree')
     } else {
       next()
     }

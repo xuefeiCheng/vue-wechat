@@ -1,6 +1,5 @@
 <template>
   <div>
-    <we-header :WeTitle="title"></we-header>
     <div class="box">
       <div class="Atitle">《“绿盾”骚扰电话防护服务条款》</div>
       <p class="font-indent acticle">
@@ -28,7 +27,7 @@
         您同意本条款即代表您授权“绿盾”对你的所有来电进行过滤，对骚扰来电进行拦截和提醒，并同意承担潜在的误拦风险。
         “绿盾”将尽最大努力提供精准的骚扰电话拦截服务，并不断完善产品功能。
       </p>
-      <router-link to="/bind">
+      <router-link to="/info/bind">
         <div class="agreeBtn globalBtn">确定并绑定手机号</div>
       </router-link>
     </div>
@@ -36,15 +35,10 @@
 </template>
 
 <script>
-import WeHeader from '@/components/Header'
 export default {
   name: 'agree',
-  components: {
-    WeHeader
-  },
   data () {
     return {
-      title: '免责声明',
       BtitleList: [
         {
           'title': '“绿盾”为用户默认开启拦截功能的骚扰电话类别包括：',

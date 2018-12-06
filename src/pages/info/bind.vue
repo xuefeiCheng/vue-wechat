@@ -1,6 +1,5 @@
 <template>
   <div>
-    <we-header :WeTitle="title" :isShow='false'></we-header>
     <div class="info">开通、取消业务请通过10086或移动营业厅</div>
     <div class="info warnInfo" v-show="bindState">您已绑定17615839470,继续帮顶将会替换已绑定手机号!</div>
     <group title="号码绑定">
@@ -20,12 +19,10 @@
 </template>
 
 <script>
-import WeHeader from '@/components/Header'
 import { Group, XInput, XButton, Tabbar } from 'vux'
 export default {
   name: 'bind',
   components: {
-    WeHeader,
     Group,
     XInput,
     XButton,
@@ -33,7 +30,6 @@ export default {
   },
   data () {
     return {
-      title: '号码绑定',
       bindState: false,
       agreeBind: true,
       text: '开通即代表同意<<"绿盾"防护的服务条款>>'
