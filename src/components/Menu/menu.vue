@@ -1,6 +1,5 @@
 <template>
 <div>
-  <we-header :WeTitle="title" :isShow='false'></we-header>
   <div class="test">
     <div class="title">菜单选择</div>
       <div>
@@ -31,16 +30,10 @@
 </template>
 
 <script>
-import WeHeader from '@/components/Header'
 export default {
-  name: 'HelloWorld',
+  name: 'Menu',
   data () {
-    return {
-      title: '首页'
-    }
-  },
-  components: {
-    WeHeader
+    return {}
   }
 }
 </script>

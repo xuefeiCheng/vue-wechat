@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Menu from '@/components/Menu/menu'
 import ListViewTest from '@/pages/test/listViewTest'
 import LayOut from '@/pages/test/LayOut'
 import Agree from '@/pages/info/agree'
@@ -15,11 +15,19 @@ Vue.use(Router)
 const initialRouteMap = [
   {
     path: '/',
-    name: 'HelloWorld',
-    meta: {
-      requireAuth: false
-    },
-    component: HelloWorld
+    redirect: '/menu',
+    name: 'Menu',
+    component: LayOut,
+    children: [
+      {
+        path: 'menu',
+        name: '首页',
+        meta: {
+          requireAuth: false
+        },
+        component: Menu
+      }
+    ]
   },
   {
     path: '/black',
