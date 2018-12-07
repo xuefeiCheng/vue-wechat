@@ -62,6 +62,7 @@ export default {
   },
   data () {
     return {
+      // 默认是开启状态
       stateFlag: true,
       classifyState: classify[true],
       value: true
@@ -69,8 +70,23 @@ export default {
   },
   methods: {
     onSubmitState () {
-      this.stateFlag = !this.stateFlag
-      this.classifyState = classify[this.stateFlag]
+      setTimeout(() => {
+        if (Math.random() > 0.5) {
+          // 如果更改成功
+          this.$vux.toast.show({
+            text: '操作成功'
+          })
+          // 更改为 开启/关闭状态
+          this.stateFlag = !this.stateFlag
+          this.classifyState = classify[this.stateFlag]
+        } else {
+          // 如果更改失败 不操作
+          this.$vux.toast.show({
+            type: 'warn',
+            text: '稍后再试'
+          })
+        }
+      }, 20)
     },
     onSwitchChange (value) {
       console.log('change-->' + value)
