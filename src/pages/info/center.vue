@@ -7,7 +7,8 @@
       <div class="personNum">{{personNum}}</div>
     </div>
     <group title="通知提醒">
-      <radio :options="radioList" value="001" @on-change="change"></radio>
+      <!-- @on-change="change" -->
+      <radio :options="radioList" v-model="checkVal" @click.native="onClick"></radio>
     </group>
   </div>
 </template>
@@ -21,6 +22,7 @@ export default {
   },
   data () {
     return {
+      checkVal: '001',
       personNum: '17615895410',
       centerBg: 'url("static/img/info/my_bg.png") no-repeat center center',
       radioList: [{
@@ -39,8 +41,27 @@ export default {
     }
   },
   methods: {
-    change (value, label) {
-      console.log('change:', value, label)
+    onClick (value, label) {
+      setTimeout(() => {
+        if (Math.random() > 0.5) {
+          // 如果更改成功
+          this.$vux.toast.show({
+            text: '更改成功'
+          })
+        } else {
+          // 如果更改失败
+          this.$vux.toast.show({
+            type: 'warn',
+            text: '稍后再试'
+          })
+          this.init()
+        }
+      }, 20)
+    },
+    init () {
+      setTimeout(() => {
+        this.checkVal = '001'
+      }, 2000)
     }
   }
 }
