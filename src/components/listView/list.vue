@@ -4,6 +4,7 @@
     v-model="value"
     auto-scroll-to-top
     @on-submit="onSubmit"
+    @on-cancel="onCancel"
     ref="search"></search>
     <!-- 备份 完整版事件
     <search
