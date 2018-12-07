@@ -10,8 +10,9 @@ import 'babel-polyfill'
 import 'styles/reset.css'
 import 'styles/iconfont.css'
 import 'styles/global.css'
-import { AlertPlugin, ToastPlugin } from 'vux'
+import { AlertPlugin, ToastPlugin, ConfirmPlugin } from 'vux'
 
+Vue.use(ConfirmPlugin)
 Vue.use(AlertPlugin)
 Vue.use(ToastPlugin)
 
