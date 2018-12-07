@@ -61,8 +61,8 @@
         </div>
       </swipeout-item>
     </swipeout>
-    <actionsheet v-model="show" :menus="menus" @on-click-menu="click" @on-click-menu-delete="onDelete" show-cancel></actionsheet>
-    <toast v-model="delSuccess">删除成功</toast>
+    <!-- <actionsheet v-model="show" :menus="menus" @on-click-menu="click" @on-click-menu-delete="onDelete" show-cancel></actionsheet> -->
+    <!-- <toast v-model="delSuccess">删除成功</toast> -->
   </div>
 </template>
 
@@ -115,12 +115,12 @@ export default {
       delId: '',
       results: [],
       value: '',
-      show: false,
+      // show: false,
       menus: {
         'title.noop': '确定咩?<br/><span style="color:#666;font-size:12px;">删除后就无法撤消了哦</span>',
         delete: '<span style="color:red">删除</span>'
       },
-      delSuccess: false,
+      // delSuccess: false,
       leftOptions: {
         showBack: false
       },
@@ -136,8 +136,22 @@ export default {
     },
     onDeleteItem (delId) {
       // 点击删除按钮后，删除提示框出现，删除id绑定
-      this.show = true
+      // this.show = true
       this.delId = delId
+      // 显示
+      const _this = this // 需要注意 onCancel 和 onConfirm 的 this 指向
+      this.$vux.confirm.show({
+        title: '操作提示',
+        content: '<p style="text-align:center;">确定吗？</p><p style="text-align:center;">删除后就无法撤销了！</p>',
+        // 组件除show外的属性
+        onCancel () {
+          console.log(this) // 非当前 vm
+          console.log(_this) // 当前 vm
+        },
+        onConfirm () {
+          _this.$emit('testDelete', _this.delId)
+        }
+      })
       console.log('on delete')
     },
     onDelete () {
