@@ -24,7 +24,20 @@ export default {
   methods: {
     testDelete (delId) {
       console.log('on test组件的Delete事件,删除的是：' + delId)
-      this.$refs.test.DeleSuccess()
+      setTimeout(() => {
+        if (Math.random() > 0.5) {
+          // 如果更改成功
+          this.$vux.toast.show({
+            text: '删除成功'
+          })
+        } else {
+          // 如果更改失败
+          this.$vux.toast.show({
+            type: 'warn',
+            text: '稍后再试'
+          })
+        }
+      }, 20)
     },
     onPullingDown () {
       // 模拟更新数据
