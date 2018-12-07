@@ -52,6 +52,20 @@ export default {
     },
     onSubmit () {
       console.log('on submit')
+      setTimeout(() => {
+        if (Math.random() > 0.5) {
+          // 如果更改成功
+          this.$vux.toast.show({
+            text: '提交成功'
+          })
+        } else {
+          // 如果更改失败
+          this.$vux.toast.show({
+            type: 'warn',
+            text: '稍后再试'
+          })
+        }
+      }, 20)
     },
     initSelect (flag) {
       switch (flag) {
