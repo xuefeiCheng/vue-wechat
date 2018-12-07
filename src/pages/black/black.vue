@@ -6,23 +6,75 @@
     @onPullingDown="onPullingDown"
     @onPullingUp="onPullingUp"
     @onSubmit="onSubmit"
-    ref="test"></list-view>
+    ref="test">
+      <group class="weui-cells-top0">
+        <cell
+          v-for="item in data"
+          :key="item.id"
+          :inline-desc='item.desc'>
+          <x-icon type="ios-minus-outline" class="cell-x-icon" @click="onDeleteItem(item.id)"></x-icon>
+          <span slot="title">
+            <span style="vertical-align:middle;">{{item.phone}}</span>
+            <badge :text="badge(item.badge)"></badge>
+          </span>
+        </cell>
+      </group>
+    </list-view>
   </div>
 </template>
 
 <script>
 import ListView from '@/components/listView/list.vue'
 import { ArrDel } from 'common/js/handleData.js'
+import { Group, Cell, Badge } from 'vux'
 
 export default {
   components: {
-    ListView
+    ListView,
+    Group,
+    Cell,
+    Badge
   },
   mounted () {
     this.$refs.test.forceUpdate()
   },
   computed: {},
   methods: {
+    badge (flag) {
+      switch (flag) {
+        case '1':
+          return '诈骗电话'
+        case '2':
+          return '恶意骚扰'
+        case '3':
+          return '房产中介'
+        case '4':
+          return '广告推销'
+        case '5':
+          return '保险理财'
+        case '6':
+          return '教育培训'
+        case '7':
+          return '快递送餐'
+        case '8':
+          return '其他'
+        default:
+          return '其他'
+      }
+    },
+    onDeleteItem (delId) {
+      const _this = this // 需要注意 onCancel 和 onConfirm 的 this 指向
+      this.$vux.confirm.show({
+        title: '操作提示',
+        content: '<p style="text-align:center;">确定吗？</p><p style="text-align:center;">删除后就无法撤销了！</p>',
+        // 组件除show外的属性
+        onCancel () {},
+        onConfirm () {
+          _this.testDelete()
+        }
+      })
+      console.log('on delete')
+    },
     testDelete (delId) {
       setTimeout(() => {
         if (Math.random() > 0.5) {
@@ -55,7 +107,7 @@ export default {
           this.data.unshift({
             id: ++this.itemIndex,
             phone: '17615864992',
-            badge: '快递送餐',
+            badge: '2',
             desc: new Date().toString()
           })
         } else {
@@ -78,7 +130,7 @@ export default {
             newPage.push({
               id: ++this.itemIndex,
               phone: '17615864992',
-              badge: '快递送餐',
+              badge: '3',
               desc: '2018/11/22 15:27:40'
             })
           }
@@ -101,56 +153,56 @@ export default {
         {
           id: '1',
           phone: '17615864102',
-          badge: '教育培训01',
+          badge: '1',
           desc: '2018/11/22 15:27:40'
         }, {
           id: '2',
           phone: '17615864992',
-          badge: '快递送餐02',
+          badge: '2',
           desc: '2018/11/22 15:27:40'
         },
         {
           id: '3',
           phone: '17615864102',
-          badge: '教育培训03',
+          badge: '3',
           desc: '2018/11/22 15:27:40'
         }, {
           id: '4',
           phone: '17615864992',
-          badge: '快递送餐04',
+          badge: '4',
           desc: '2018/11/22 15:27:40'
         },
         {
           id: '5',
           phone: '17615864102',
-          badge: '教育培训05',
+          badge: '5',
           desc: '2018/11/22 15:27:40'
         }, {
           id: '6',
           phone: '17615864992',
-          badge: '快递送餐06',
+          badge: '6',
           desc: '2018/11/22 15:27:40'
         },
         {
           id: '7',
           phone: '17615864102',
-          badge: '教育培训07',
+          badge: '7',
           desc: '2018/11/22 15:27:40'
         }, {
           id: '8',
           phone: '17615864992',
-          badge: '快递送餐08',
+          badge: '8',
           desc: '2018/11/22 15:27:40'
         },
         {
           id: '9',
           phone: '17615864102',
-          badge: '教育培训',
+          badge: '1',
           desc: '2018/11/22 15:27:40'
         }, {
           id: '10',
           phone: '17615864992',
-          badge: '快递送餐',
+          badge: '2',
           desc: '2018/11/22 15:27:40'
         }
       ],
@@ -160,4 +212,12 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped lang="stylus">
+.weui-cells-top0 >>> .vux-no-group-title {
+  margin-top 0px
+}
+.vux-x-icon {
+  fill: #F70968;
+  fill: #f74c31;
+}
+</style>
