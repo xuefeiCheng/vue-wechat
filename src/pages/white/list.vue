@@ -23,12 +23,24 @@ export default {
   computed: {},
   methods: {
     testDelete (delId) {
-      console.log('on test组件的Delete事件,删除的是：' + delId)
-      this.$refs.test.DeleSuccess()
-      // 数据假删除
-      ArrDel(this.data, (obj) => {
-        return obj.id === delId
-      })
+      setTimeout(() => {
+        if (Math.random() > 0.5) {
+          // 如果更改成功
+          this.$vux.toast.show({
+            text: '删除成功'
+          })
+          // 数据假删除
+          ArrDel(this.data, (obj) => {
+            return obj.id === delId
+          })
+        } else {
+          // 如果更改失败
+          this.$vux.toast.show({
+            type: 'warn',
+            text: '稍后再试'
+          })
+        }
+      }, 20)
     },
     onPullingDown () {
       // 模拟更新数据
