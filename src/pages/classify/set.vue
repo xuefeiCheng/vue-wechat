@@ -95,7 +95,12 @@ export default {
     },
     onConfirm (value) {
       this.$refs.confirm.setInputValue('')
-      this.$vux.toast.text('input value: ' + this.ljValue)
+      this.$vux.toast.show({
+        // type: 'success', // text cancel warn
+        // position: 'middle', // top middle bottom ''
+        // time: '5000',
+        text: 'input value: ' + this.ljValue
+      })
     },
     onCancel () {
       console.log('on cancel')
