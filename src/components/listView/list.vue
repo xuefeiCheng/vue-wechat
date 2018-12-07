@@ -32,18 +32,20 @@
         @pullingDown="onPullingDown"
         @pullingUp="onPullingUp"
       >
-        <group class="weui-cells-top0">
-          <cell
-            v-for="item in dataList"
-            :key="item.id"
-            :inline-desc='item.desc'>
-            <x-icon type="ios-minus-outline" class="cell-x-icon" @click="onDeleteItem(item.id)"></x-icon>
-            <span slot="title">
-              <span style="vertical-align:middle;">{{item.phone}}</span>
-              <badge :text="item.badge" :class="badge"></badge>
-            </span>
-          </cell>
-        </group>
+        <slot>
+          <group class="weui-cells-top0">
+            <cell
+              v-for="item in dataList"
+              :key="item.id"
+              :inline-desc='item.desc'>
+              <x-icon type="ios-minus-outline" class="cell-x-icon" @click="onDeleteItem(item.id)"></x-icon>
+              <span slot="title">
+                <span style="vertical-align:middle;">{{item.phone}}</span>
+                <badge :text="item.badge" :class="badge"></badge>
+              </span>
+            </cell>
+          </group>
+        </slot>
       </scroll>
     </div>
     <swipeout class="vux-1px-tb" style="display:none">
