@@ -12,6 +12,7 @@
 
 <script>
 import ListView from '@/components/listView/list.vue'
+import { ArrDel } from 'common/js/handleData.js'
 
 export default {
   components: {
@@ -23,12 +24,15 @@ export default {
   computed: {},
   methods: {
     testDelete (delId) {
-      console.log('on test组件的Delete事件,删除的是：' + delId)
       setTimeout(() => {
         if (Math.random() > 0.5) {
           // 如果更改成功
           this.$vux.toast.show({
             text: '删除成功'
+          })
+          // 数据假删除
+          ArrDel(this.data, (obj) => {
+            return obj.id === delId
           })
         } else {
           // 如果更改失败
@@ -97,45 +101,45 @@ export default {
         {
           id: '1',
           phone: '17615864102',
-          badge: '教育培训',
+          badge: '教育培训01',
           desc: '2018/11/22 15:27:40'
         }, {
           id: '2',
           phone: '17615864992',
-          badge: '快递送餐',
+          badge: '快递送餐02',
           desc: '2018/11/22 15:27:40'
         },
         {
           id: '3',
           phone: '17615864102',
-          badge: '教育培训',
+          badge: '教育培训03',
           desc: '2018/11/22 15:27:40'
         }, {
           id: '4',
           phone: '17615864992',
-          badge: '快递送餐',
+          badge: '快递送餐04',
           desc: '2018/11/22 15:27:40'
         },
         {
           id: '5',
           phone: '17615864102',
-          badge: '教育培训',
+          badge: '教育培训05',
           desc: '2018/11/22 15:27:40'
         }, {
           id: '6',
           phone: '17615864992',
-          badge: '快递送餐',
+          badge: '快递送餐06',
           desc: '2018/11/22 15:27:40'
         },
         {
           id: '7',
           phone: '17615864102',
-          badge: '教育培训',
+          badge: '教育培训07',
           desc: '2018/11/22 15:27:40'
         }, {
           id: '8',
           phone: '17615864992',
-          badge: '快递送餐',
+          badge: '快递送餐08',
           desc: '2018/11/22 15:27:40'
         },
         {
