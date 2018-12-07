@@ -15,7 +15,11 @@
         <span  class="strong colorRed">应该如何防骚扰？</span><br/>
         别担心！终极处理办法现在送上！<br/><br/>
         <span class="strong">“绿盾”防护业务</span><br/>
+      </p>
+      <div class="img">
         <img alt="绿盾防护" src="static/img/info/logo_zj.jpg" style="width: 100%;">
+      </div>
+      <p>
         开通“绿盾”防护业务<br/>
         可以在呼叫达到用户手机前<br/>
         <span class="strong colorRed">拦截骚扰呼叫，放行正常呼叫</span><br/><br/>
@@ -29,4 +33,11 @@
 
 <script></script>
 
-<style scoped lang="stylus"></style>
+<style scoped lang="stylus">
+.img {
+  width: 100%;
+  height: 0;
+  padding-bottom: 53.8%;
+  background: #cccccc;
+}
+</style>
