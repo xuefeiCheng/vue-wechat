@@ -4,8 +4,8 @@
     :WeTitle="title"
     :leftOptions="leftOptions"
     :onClickBack="backToHome"
-    class="fixedHeader"></we-header>
-    <div class="content">
+    class=""></we-header>
+    <div class="">
       <router-view/>
     </div>
   </div>
