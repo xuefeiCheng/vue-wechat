@@ -4,13 +4,13 @@
       <div class="box-top">
         <div class="top-row input-group">
           <input class="qh form-control" placeholder="区号"/>
-          <input class="phone form-control border-noRedius-r" ref="phone" placeholder="手机或固话号" />
+          <input class="phone form-control border-noRedius-r" ref="phone" placeholder="手机或固话号" v-model="balckPhone"/>
           <div class='lxr border-radius-12 border-noRedius-l' @click="showLianxiren"><i class="iconfont icon-lianxiren font-size-30 font-color-FFF"></i></div>
         </div>
       </div>
       <div class="box-info">手机无需区号，添加后，黑名单中的号码来电会被直接拦截</div>
       <div class="box-middle">
-        <div class="coloumn" v-for="( img, index ) in imgList" :key="index">
+        <div class="coloumn" v-for="(img, index) in imgList" :key="index">
           <div class="reson-item" v-for="i in img" :key="i.value" @click="selectBlackReason(i)">
             <img class="reson-item-img" :src="i.src[0]" alt="img.title" v-show='!i.state'>
             <img class="reson-item-img" :src="i.src[1]" alt="img.title" v-show='i.state'>
@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="box-bottom">
-        <x-button type="primary" class="globalBtn" @click.native="setFoucs">立即添加</x-button>
+        <x-button type="primary" class="globalBtn" @click.native="onAdd">立即添加</x-button>
         <x-button type="default" class="globalBtn" link="/black/list">黑名单列表</x-button>
       </div>
     </div>
@@ -30,7 +30,7 @@
       @on-confirm="onConfirm"
       @on-show="onShow"
       @on-hide="onHide">
-        <checklist :options="inlineDescList" v-model="inlineDescListValue" :max="1" @on-change="change"></checklist>
+        <checklist :options="inlineDescList" :max="1" @on-change="change"></checklist>
       </confirm>
     </div>
   </div>
@@ -56,7 +56,8 @@ export default {
         {key: '2', value: '14715486282', inlineDesc: '2018/11/31 15:45:37'},
         {key: '3', value: '16515823952', inlineDesc: '2018/11/31 15:45:37'}
       ],
-      inlineDescListValue: [],
+      balckPhone: '',
+      reasonStr: '',
       imgList: [
         [{
           value: '1',
@@ -123,6 +124,8 @@ export default {
         i.state = true
         // console.log(i)
       })
+      console.log('选择的是：' + i.title + '，值为：' + i.value)
+      this.reasonStr = i.value
     },
     setFoucs () {
       // 若没有数据 设置焦点到 手机号或区号
@@ -130,16 +133,17 @@ export default {
     },
     showLianxiren () {
       this.show = true
-      this.inlineDescListValue = []
     },
     onCancel () {
       console.log('on cancel')
+      this.balckPhone = ''
     },
     onConfirm (msg) {
       console.log('on confirm')
       if (msg) {
         alert(msg)
       }
+      console.log('在最近通话记录中选择的黑名单号码为：' + this.balckPhone)
     },
     onHide () {
       console.log('on hide')
@@ -147,8 +151,34 @@ export default {
     onShow () {
       console.log('on show')
     },
+    onAdd () {
+      if (this.check()) {
+        this.setFoucs()
+      } else {
+        console.log('必填项输入符合规范')
+        this.$vux.toast.show({text: '添加成功'})
+        setTimeout(() => {
+          // 跳转 黑名单列表
+          this.$router.push('/black/list')
+        }, 2000)
+      }
+    },
     change (val, label) {
+      // val label 为集合
       console.log('change', val, label)
+      this.balckPhone = label[0]
+    },
+    check () {
+      let flag
+      this.balckPhone === '' || this.reasonStr === '' ? flag = true : flag = false
+      if (flag) {
+        this.$vux.toast.show({
+          type: 'warn',
+          position: 'middle',
+          text: '必填不能为空'
+        })
+      }
+      return flag
     }
   }
 }
