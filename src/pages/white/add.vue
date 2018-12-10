@@ -4,16 +4,16 @@
       <div class="box-top">
         <div class="top-row input-group">
           <input class="qh form-control" placeholder="区号"/>
-          <input class="phone form-control border-noRedius-r" ref="phone" placeholder="手机或固话号" />
+          <input class="phone form-control border-noRedius-r" ref="phone" placeholder="手机或固话号" v-model="whtiePhone"/>
           <div class='lxr border-radius-12 border-noRedius-l' @click="showLianxiren"><i class="iconfont icon-lianxiren font-size-30 font-color-FFF"></i></div>
         </div>
         <div class="top-row input-group">
-          <input class="all form-control" placeholder="请填写备注（6字以内）"/>
+          <input class="all form-control" ref="remark" placeholder="请填写备注（6字以内）" v-model="remark"/>
         </div>
       </div>
       <div class="box-info">添加后，白名单中的号码不会被拦截</div>
       <div class="box-bottom">
-        <x-button type="primary" class="globalBtn" @click.native="setFoucs">立即添加</x-button>
+        <x-button type="primary" class="globalBtn" @click.native="onAdd">立即添加</x-button>
         <x-button type="default" class="globalBtn" link="/white/list">白名单列表</x-button>
       </div>
     </div>
@@ -24,7 +24,7 @@
       @on-confirm="onConfirm"
       @on-show="onShow"
       @on-hide="onHide">
-        <checklist :options="inlineDescList" v-model="inlineDescListValue" :max="1" @on-change="change"></checklist>
+        <checklist :options="inlineDescList" v-model="inlineDescListValue" :max="1" @on-change="onChange"></checklist>
       </confirm>
     </div>
   </div>
@@ -45,6 +45,8 @@ export default {
   data () {
     return {
       show: false,
+      whtiePhone: '',
+      remark: '',
       inlineDescList: [
         {key: '1', value: '15715262025', inlineDesc: '2018/11/31 15:45:37'},
         {key: '2', value: '14715486282', inlineDesc: '2018/11/31 15:45:37'},
@@ -56,9 +58,18 @@ export default {
     }
   },
   methods: {
-    setFoucs () {
-      // 若没有数据 设置焦点到 手机号或区号
-      this.$refs.phone.focus()
+    setFoucs (position) {
+      switch (position) {
+        case 'whitePhone':
+          // 若没有数据 设置焦点到 手机号或区号
+          this.$refs.phone.focus()
+          break
+        case 'remark':
+          this.$refs.remark.focus()
+          break
+        default:
+          this.$refs.phone.focus()
+      }
     },
     showLianxiren () {
       this.show = true
@@ -78,9 +89,44 @@ export default {
     },
     onShow () {
       console.log('on show')
+      this.whtiePhone = ''
     },
-    change (val, label) {
+    onChange (val, label) {
       console.log('change', val, label)
+      this.whtiePhone = label[0]
+    },
+    onAdd () {
+      const RESULT = this.check()
+      const FLAG = RESULT.flag
+      const POSITION = RESULT.position
+      if (FLAG) {
+        this.setFoucs(POSITION)
+      } else {
+        console.log('必填项填写符合要求')
+        this.$vux.toast.show({text: '添加成功'})
+        setTimeout(() => {
+          // 跳转 黑名单列表
+          this.$router.push('/white/list')
+        }, 2000)
+      }
+    },
+    check () {
+      let flag, position
+      this.whtiePhone === '' || this.remark === '' ? flag = true : flag = false
+      if (this.whtiePhone === '' || this.whtiePhone === undefined) {
+        position = 'whtiePhone'
+      } else if (this.remark === '' || this.remark === undefined) {
+        position = 'remark'
+      } else {
+        position = ''
+      }
+      if (flag) {
+        this.$vux.toast.show({
+          type: 'warn',
+          text: '必填不能为空'
+        })
+      }
+      return {flag, position}
     }
   }
 }
