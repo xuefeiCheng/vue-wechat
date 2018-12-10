@@ -30,7 +30,7 @@
       @on-confirm="onConfirm"
       @on-show="onShow"
       @on-hide="onHide">
-        <checklist :options="inlineDescList" v-model="initDescList" :max="1" @on-change="change"></checklist>
+        <checklist :options="inlineDescList" v-model="initDescList" :max="1" @on-change="onChange"></checklist>
       </confirm>
     </div>
   </div>
@@ -165,7 +165,7 @@ export default {
         }, 2000)
       }
     },
-    change (val, label) {
+    onChange (val, label) {
       // val label 为集合
       console.log('change', val, label)
       this.balckPhone = label[0]
