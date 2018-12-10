@@ -30,7 +30,7 @@
       @on-confirm="onConfirm"
       @on-show="onShow"
       @on-hide="onHide">
-        <checklist :options="inlineDescList" :max="1" @on-change="change"></checklist>
+        <checklist :options="inlineDescList" v-model="initDescList" :max="1" @on-change="change"></checklist>
       </confirm>
     </div>
   </div>
@@ -50,14 +50,15 @@ export default {
   },
   data () {
     return {
-      show: false,
+      show: false, // 通话记录弹框是否展示
+      balckPhone: '', // 黑名单号码
+      reasonStr: '', // 拉黑原因
+      initDescList: [], // 通话记录默认选择
       inlineDescList: [
         {key: '1', value: '15715262025', inlineDesc: '2018/11/31 15:45:37'},
         {key: '2', value: '14715486282', inlineDesc: '2018/11/31 15:45:37'},
         {key: '3', value: '16515823952', inlineDesc: '2018/11/31 15:45:37'}
       ],
-      balckPhone: '',
-      reasonStr: '',
       imgList: [
         [{
           value: '1',
@@ -133,6 +134,7 @@ export default {
     },
     showLianxiren () {
       this.show = true
+      this.initDescList = []
     },
     onCancel () {
       console.log('on cancel')
