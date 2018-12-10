@@ -3,8 +3,11 @@
     <we-header
     :WeTitle="title"
     :leftOptions="leftOptions"
-    :onClickBack="backToHome"></we-header>
-    <router-view/>
+    :onClickBack="backToHome"
+    class="fixedHeader"></we-header>
+    <div class="content">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -43,4 +46,13 @@ export default {
 </script>
 
 <style lang="stylus">
+.fixedHeader {
+  position fixed !important
+  top 0
+  width 100vw
+  z-index 999
+}
+.content {
+  margin-top 46px
+}
 </style>
