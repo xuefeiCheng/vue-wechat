@@ -128,9 +128,11 @@ export default {
       console.log('选择的是：' + i.title + '，值为：' + i.value)
       this.reasonStr = i.value
     },
-    setFoucs () {
-      // 若没有数据 设置焦点到 手机号或区号
-      this.$refs.phone.focus()
+    setFoucs (pos) {
+      if (pos === 'blackPhone') {
+        // 若没有数据 设置焦点到 手机号或区号
+        this.$refs.phone.focus()
+      }
     },
     showLianxiren () {
       this.show = true
@@ -154,8 +156,11 @@ export default {
       console.log('on show')
     },
     onAdd () {
-      if (this.check()) {
-        this.setFoucs()
+      const RESULT = this.check()
+      const FLAG = RESULT.flag
+      const POSITION = RESULT.position
+      if (FLAG) {
+        this.setFoucs(POSITION)
       } else {
         console.log('必填项输入符合规范')
         this.$vux.toast.show({text: '添加成功'})
@@ -171,8 +176,13 @@ export default {
       this.balckPhone = label[0]
     },
     check () {
-      let flag
+      let flag, position
       this.balckPhone === '' || this.reasonStr === '' ? flag = true : flag = false
+      if (this.balckPhone === '' || this.balckPhone === undefined) {
+        position = 'blackPhone'
+      } else {
+        position = ''
+      }
       if (flag) {
         this.$vux.toast.show({
           type: 'warn',
@@ -180,7 +190,7 @@ export default {
           text: '必填不能为空'
         })
       }
-      return flag
+      return {flag, position}
     }
   }
 }
