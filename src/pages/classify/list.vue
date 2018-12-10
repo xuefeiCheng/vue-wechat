@@ -20,7 +20,8 @@
       </div>
       <div class="box-middle" v-show="stateFlag">
          <group class="weui-cells-top0">
-          <x-switch title="疑似诈骗" v-model="value01" @on-change="onSwitchChange"></x-switch>
+          <x-switch title="疑似诈骗" prevent-default v-model="value01" @on-click="onSwitchClick"></x-switch>
+          <!-- <x-switch title="疑似诈骗" v-model="value01" @on-change="onSwitchChange"></x-switch> -->
           <x-switch title="骚扰电话" v-model="value02"></x-switch>
           <x-switch title="违法犯罪" v-model="value03"></x-switch>
           <x-switch title="响一声" v-model="value04"></x-switch>
@@ -96,6 +97,22 @@ export default {
         }
       }, 20)
     },
+    onSwitchClick (newVal, oldVal) {
+      console.log(oldVal + ' 即将change-->' + newVal)
+      if (Math.random() > 0.5) {
+        // 如果更改成功
+        this.$vux.toast.show({
+          text: '操作成功'
+        })
+        this.value01 = newVal
+      } else {
+        // 如果更改失败 不操作
+        this.$vux.toast.show({
+          type: 'warn',
+          text: '稍后再试'
+        })
+      }
+    },
     onSwitchChange (value) {
       console.log('change-->' + value)
       if (Math.random() > 0.5) {
@@ -111,6 +128,7 @@ export default {
         })
         setTimeout(() => {
           this.value01 = !this.value01
+          // 弊端 还会再触发 change事件
         }, 2000)
       }
     }
