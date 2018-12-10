@@ -112,7 +112,7 @@ export default {
     },
     check () {
       let flag, position
-      this.whtiePhone === '' || this.remark === '' ? flag = true : flag = false
+      (this.whtiePhone === '' || this.whtiePhone === undefined) || (this.remark === '' || this.remark === undefined) ? flag = true : flag = false
       if (this.whtiePhone === '' || this.whtiePhone === undefined) {
         position = 'whtiePhone'
       } else if (this.remark === '' || this.remark === undefined) {

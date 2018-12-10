@@ -177,7 +177,7 @@ export default {
     },
     check () {
       let flag, position
-      this.balckPhone === '' || this.reasonStr === '' ? flag = true : flag = false
+      (this.balckPhone === '' || this.balckPhone === undefined) || (this.reasonStr === '' || this.reasonStr === undefined) ? flag = true : flag = false
       if (this.balckPhone === '' || this.balckPhone === undefined) {
         position = 'blackPhone'
       } else {
