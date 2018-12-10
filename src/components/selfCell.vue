@@ -7,7 +7,7 @@
       :arrow-direction="item.showContent ? 'up' : 'down'"
       @click.native="item.showContent = !item.showContent">
     </cell>
-    <p class="slide" :class="item.showContent?'animate':''">{{item.answer}}</p>
+    <p class="slide" :class="item.showContent?'animate':''" v-html="item.answer"></p>
   </div>
 </template>
 
