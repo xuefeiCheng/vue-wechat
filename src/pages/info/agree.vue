@@ -120,7 +120,7 @@ export default {
 .acticle
   padding 0.1333rem 0
 .Btitle
-  font-size 0.16rem
+  // font-size 0.32rem
   // height 0.6rem
   line-height 0.6rem
   font-weight bold
@@ -136,7 +136,6 @@ export default {
     background-color $bgColor
     vertical-align middle
   .item-title
-    font-size 0.16rem
     font-weight bold
 .agreeBtn
   width 80vw
