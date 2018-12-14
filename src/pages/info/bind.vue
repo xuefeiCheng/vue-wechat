@@ -38,7 +38,7 @@ export default {
   methods: {
     insertUser () {
       localStorage.setItem('hasUser', true)
-      let targetPath = localStorage.getItem('targetPath')
+      let targetPath = sessionStorage.getItem('targetPath')
       let redirect = decodeURIComponent(targetPath || '/')
       this.$router.push({// 你需要接受路由的参数再跳转
         path: redirect

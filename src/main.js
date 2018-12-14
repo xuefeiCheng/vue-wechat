@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store/index'
 import fastClick from 'fastclick'
 import axios from '@/util/http'
 import 'lib-flexible/flexible.js'
@@ -22,6 +23,7 @@ fastClick.attach(document.body)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'

@@ -9,9 +9,11 @@ import Center from '@/pages/info/center'
 import FeedBack from '@/pages/info/feedback'
 import Problem from '@/pages/info/problem'
 import Introduce from '@/pages/info/introduce'
+import store from '@/store/index'
 
 Vue.use(Router)
-
+console.log(store)
+let hasUser = localStorage.setItem('hasUser', null)
 const initialRouteMap = [
   {
     path: '/',
@@ -181,10 +183,10 @@ const router = new Router({
 // 全局路由开始守卫
 router.beforeEach((to, from, next) => {
   if (to.meta.requireAuth) {
-    let hasUser = localStorage.getItem('hasUser')
+    hasUser = localStorage.getItem('hasUser')
     if (hasUser === null || hasUser === 'null') {
       console.log('没有注册')
-      localStorage.setItem('targetPath', to.fullPath)
+      sessionStorage.setItem('targetPath', to.fullPath)
       next('/info/agree')
     } else {
       next()
