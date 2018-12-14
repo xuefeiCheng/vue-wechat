@@ -2,7 +2,6 @@
   <div>
     <we-header
     :WeTitle="title"
-    :leftOptions="leftOptions"
     :onClickBack="backToHome"
     class=""></we-header>
     <div class="">

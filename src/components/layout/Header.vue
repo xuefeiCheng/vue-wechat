@@ -34,8 +34,7 @@ export default {
       type: Object,
       default () {
         return {
-          showBack: true,
-          preventGoBack: false
+          showBack: false
         }
       }
     },

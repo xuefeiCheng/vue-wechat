@@ -22,7 +22,7 @@ axios.interceptors.response.use(
     let code = response.status
     if (code === 200) { // 拦截未登陆请求到登录界面
       setTimeout(function () {
-        sessionStorage.setItem('hasUser', null)
+        localStorage.setItem('hasUser', null)
         location.reload()
       }, 2000)
       Vue.$vux.toast.show({

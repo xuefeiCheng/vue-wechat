@@ -181,10 +181,10 @@ const router = new Router({
 // 全局路由开始守卫
 router.beforeEach((to, from, next) => {
   if (to.meta.requireAuth) {
-    let hasUser = sessionStorage.getItem('hasUser')
+    let hasUser = localStorage.getItem('hasUser')
     if (hasUser === null || hasUser === 'null') {
       console.log('没有注册')
-      sessionStorage.setItem('targetPath', to.fullPath)
+      localStorage.setItem('targetPath', to.fullPath)
       next('/info/agree')
     } else {
       next()
