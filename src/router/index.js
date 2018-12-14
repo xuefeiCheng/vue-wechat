@@ -13,7 +13,10 @@ import store from '@/store/index'
 
 Vue.use(Router)
 console.log(store)
-let hasUser = localStorage.setItem('hasUser', null)
+let hasUser = localStorage.getItem('hasUser')
+if (hasUser === null) {
+  hasUser = null
+}
 const initialRouteMap = [
   {
     path: '/',
