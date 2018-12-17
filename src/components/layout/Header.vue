@@ -1,18 +1,18 @@
 <template>
-  <!-- <div class="header">
-    <span>{{WeTitle}}</span> -->
+  <div class="header">
+    <span>{{WeTitle}}</span>
     <!-- <div class='iconfont back-icon'>&#xe624;</div> -->
     <!-- <router-link to="/" v-if='isShow'>
       <div class='iconfont back-icon'>&#xe624;</div>
-    </router-link>
-  </div> -->
-  <x-header
+    </router-link> -->
+  </div>
+  <!-- <x-header
   :title="WeTitle"
   slot="header"
   :left-options="leftOptions"
   :right-options="rightOptions"
   @on-click-back="onClickBack">
-  </x-header>
+  </x-header> -->
 </template>
 
 <script>
@@ -56,16 +56,19 @@ export default {
 <style scoped lang="stylus">
   @import '~styles/variables.styl'
   .header
-    position: fixed
-    z-index: 999
+    // position: fixed
+    // z-index: 999
     overflow: hidden
     width: 100vw
-    height: $headerHeight
-    line-height: $headerHeight
+    // height: $headerHeight
+    // line-height: $headerHeight
+    height: 40px
+    line-height: 40px
     color: #fff
-    background: $bgColor
+    // background: $bgColor
+    background: #111111b3
     text-align: center
-    font-size: .32rem
+    font-size: 18px
     .back-icon
       position: absolute
       top: 0
